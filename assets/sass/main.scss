@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+// --------------------------------------------------
+// VARIABLES
+// --------------------------------------------------
+// FONT
+$int: 'Inter', sans-serif;
+$tit: 3rem;
+$par: 1rem;
+$btn: $par;
+$L: 300;
+$R: 400;
+$M: 500;
+$S: 600;
+$B: 700;
+// SIZE
+$win_h: 100vh;
+$win_w: 100vw;
+// PADDING
+$body_padd: 0 10.625rem 1.875rem 10.625rem;
+$btn_padd: 1.25rem 1.5625rem;
+// COLORS
+$white_bg: #FFFF;
+$black_tit: #3C3A5D;
+$black_shdw: #00000040;
+$purple_prim: #7050F0;
+$gray_prim: #838291;
+$gray_sec: #F1F1F3;
+
+// --------------------------------------------------
+// MIXINS
+// --------------------------------------------------
+// FLEX
+@mixin flex {
+  display: flex;
+}
+@mixin space-bet {
+  @include flex;
+  justify-content: space-between;
+} 
+@mixin row {
+  @include flex;
+  flex-direction: row;
+}
+@mixin col {
+  @include flex;
+  flex-direction: column;
+}
+// GRID
+@mixin grid { 
+  display:grid
+}
+// GENERAL
+@mixin size($h, $w) { 
+  height: $h;
+  width: $w;
+}
+@mixin transition($time) {
+  transition: all $time ease;
+}
+@mixin window{
+  padding-top: 48px;
+  height: $win_h;
+}
+// TEXT
+@mixin title {
+  font-size: $tit;
+  font-weight: $B;
+  color: $black_tit;
+}
+@mixin paragraph { 
+  font-size: $par;
+  font-weight: $M;
+  color: $gray_prim;
+}
+// COMPONENTS
+@mixin button($col, $bg) { 
+  padding: $btn_padd;
+  border-radius: 0.8125rem;
+  background-color: $bg;
+  border: 2px solid $col;
+  color: $col;
+}
+@mixin input(){
+  border-radius: 0.8125rem;
+  background-color: $gray_sec;
+  color: $gray_prim;
+  font-weight: $M;
+  font-size: 0.75rem;
+  padding: 0 0.625rem;
+  border: none;
+}
+@mixin box($p_Y, $p_X, $col){
+  padding: $p_Y $p_X;
+  border-radius: 1.8125rem;
+  background-color: $col;
+  box-shadow: 0 0 11px $black_shdw;
+}
+
+/*
+================================================================
+GENERAL
+================================================================
+*/
+html{
+  scroll-behavior: smooth;
+}
+*{
+  font-family: $int;
+  font-size: $par;
+  text-decoration: none;
+  list-style: none;
+  body{
+    padding: $body_padd;
+  }
+  button{
+    border: none;
+    outline: none;
+  }
+  .title{
+    font-size: $tit;
+    color: $black_tit;
+  }
+  .line{
+    background-color:red;
+  }
+}
+
+/*
+================================================================
+HEADER & NAV
+================================================================
+*/
+.header { 
+  .nav_bar{
+    @include space-bet;
+    @include size(78px, 100%);
+    left: 0;
+    align-items: center;
+    position: fixed;
+    padding: 1.875rem 10.625rem 0 10.625rem;
+    background-color: $white_bg;
+    .nav_logo{
+      img{
+        @include size(3rem, 3rem);
+      }
+    }
+    .nav_menu{
+      .nav_list{
+        width: 20.75rem;
+        @include row;
+        @include space-bet;
+        li{
+          a{ 
+            font-size: 0.8125rem;
+            font-weight: $S;
+            color: $gray_prim;
+          }
+        }
+      }
+    }
+    .nav_btn{ 
+      a{ 
+        button{
+          @include size(3rem, auto);
+          padding: 0 1.5625rem;
+          border-radius: 0.625rem;
+          background-color: $purple_prim;
+          color: $white_bg;
+          font-size: 0.8125rem;
+        }
+      }
+    }
+  }
+}
+/*
+================================================================
+MAIN
+================================================================
+*/
+main{ 
+  .home{
+    @include window;
+    .home_text{
+      .title span{
+        color: $purple_prim;
+        font-size: 3rem;
+      }
+      a #home_cv{
+        @include button($white_bg, $purple_prim)
+      }
+      a #home_projects{
+        @include button($purple_prim, $white_bg);
+        font-weight: $S;
+      }
+    }
+  }
+  /*
+================================================================
+ABOUT SECTION
+================================================================
+*/
+  .about{
+    @include window;
+    .about_content{
+      @include box(3.125rem, 2.5rem, $white_bg);
+      @include size(24.9375rem, 29.6875rem);
+      @include col;
+      @include space-bet;
+      p{
+        @include paragraph;
+      }
+      a button{
+        @include button($white_bg, $purple_prim);
+      }
+    }
+  }
+/*
+================================================================
+PROJECTS SECTION
+================================================================
+*/
+  .projects{
+    @include window;
+  }
+/*
+================================================================
+SKILLS SECTION
+================================================================
+*/
+  .skills{
+    @include window;
+    padding: 118px 0 70px 0;
+    @include col;
+    @include space-bet;
+    div {
+      @include size(12.9375rem, auto);
+      @include col;
+      @include space-bet;
+      .skills_slider{
+        @include size(8rem, auto);
+        @include box(1.5625rem, 3.5rem, $white_bg);
+      }
+    }  
+  }
+}
+/*
+================================================================
+FOOTER & CONTACT SECTION
+================================================================
+*/
+footer{ 
+  @include window;
+  @include row;
+  @include space-bet;
+  .contact_text{ 
+    p{
+      line-height: 165%;
+      width: 313px;
+      @include paragraph;
+    }
+  }
+  .contact_form{
+    @include size(32.8125rem, auto);
+    @include box(2.1875rem, 2.375rem, $white_bg);
+    @include col;
+    @include space-bet;
+    form{
+      @include size(23.3125rem, 30.3125rem);
+      @include col;
+      @include space-bet;
+      div{
+        @include row;
+        @include space-bet;
+        .contact_input{
+          @include size(3.4375rem, 14.375rem);
+          @include input;
+        }
+      }
+      .subject{
+        @include size(3.4375rem, 30.3125rem);
+        @include input;
+      }
+      .message{
+        @include size(8.125rem, 30.3125rem);
+        @include input;
+      }
+      button{
+        @include button($white_bg, $purple_prim);
+        font-size: 0.9375rem;
+        width: 40%;
+      }
+    }
+    .contact_media{
+      @include size(5rem, auto);
+      @include flex;
+      align-items: center;
+    }
+  }
+}

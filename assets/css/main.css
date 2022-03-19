@@ -1,0 +1,272 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+/*
+================================================================
+GENERAL
+================================================================
+*/
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  text-decoration: none;
+  list-style: none;
+}
+* body {
+  padding: 0 10.625rem 1.875rem 10.625rem;
+}
+* button {
+  border: none;
+  outline: none;
+}
+* .title {
+  font-size: 3rem;
+  color: #3C3A5D;
+}
+* .line {
+  background-color: red;
+}
+
+/*
+================================================================
+HEADER & NAV
+================================================================
+*/
+.header .nav_bar {
+  display: flex;
+  justify-content: space-between;
+  height: 78px;
+  width: 100%;
+  left: 0;
+  align-items: center;
+  position: fixed;
+  padding: 1.875rem 10.625rem 0 10.625rem;
+  background-color: #FFFF;
+}
+.header .nav_bar .nav_logo img {
+  height: 3rem;
+  width: 3rem;
+}
+.header .nav_bar .nav_menu .nav_list {
+  width: 20.75rem;
+  display: flex;
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+}
+.header .nav_bar .nav_menu .nav_list li a {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #838291;
+}
+.header .nav_bar .nav_btn a button {
+  height: 3rem;
+  width: auto;
+  padding: 0 1.5625rem;
+  border-radius: 0.625rem;
+  background-color: #7050F0;
+  color: #FFFF;
+  font-size: 0.8125rem;
+}
+
+/*
+================================================================
+MAIN
+================================================================
+*/
+main {
+  /*
+  ================================================================
+  ABOUT SECTION
+  ================================================================
+  */
+  /*
+  ================================================================
+  PROJECTS SECTION
+  ================================================================
+  */
+  /*
+  ================================================================
+  SKILLS SECTION
+  ================================================================
+  */
+}
+main .home {
+  padding-top: 48px;
+  height: 100vh;
+}
+main .home .home_text .title span {
+  color: #7050F0;
+  font-size: 3rem;
+}
+main .home .home_text a #home_cv {
+  padding: 1.25rem 1.5625rem;
+  border-radius: 0.8125rem;
+  background-color: #7050F0;
+  border: 2px solid #FFFF;
+  color: #FFFF;
+}
+main .home .home_text a #home_projects {
+  padding: 1.25rem 1.5625rem;
+  border-radius: 0.8125rem;
+  background-color: #FFFF;
+  border: 2px solid #7050F0;
+  color: #7050F0;
+  font-weight: 600;
+}
+main .about {
+  padding-top: 48px;
+  height: 100vh;
+}
+main .about .about_content {
+  padding: 3.125rem 2.5rem;
+  border-radius: 1.8125rem;
+  background-color: #FFFF;
+  box-shadow: 0 0 11px #00000040;
+  height: 24.9375rem;
+  width: 29.6875rem;
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+}
+main .about .about_content p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #838291;
+}
+main .about .about_content a button {
+  padding: 1.25rem 1.5625rem;
+  border-radius: 0.8125rem;
+  background-color: #7050F0;
+  border: 2px solid #FFFF;
+  color: #FFFF;
+}
+main .projects {
+  padding-top: 48px;
+  height: 100vh;
+}
+main .skills {
+  padding-top: 48px;
+  height: 100vh;
+  padding: 118px 0 70px 0;
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+}
+main .skills div {
+  height: 12.9375rem;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+}
+main .skills div .skills_slider {
+  height: 8rem;
+  width: auto;
+  padding: 1.5625rem 3.5rem;
+  border-radius: 1.8125rem;
+  background-color: #FFFF;
+  box-shadow: 0 0 11px #00000040;
+}
+
+/*
+================================================================
+FOOTER & CONTACT SECTION
+================================================================
+*/
+footer {
+  padding-top: 48px;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+}
+footer .contact_text p {
+  line-height: 165%;
+  width: 313px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #838291;
+}
+footer .contact_form {
+  height: 32.8125rem;
+  width: auto;
+  padding: 2.1875rem 2.375rem;
+  border-radius: 1.8125rem;
+  background-color: #FFFF;
+  box-shadow: 0 0 11px #00000040;
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+}
+footer .contact_form form {
+  height: 23.3125rem;
+  width: 30.3125rem;
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+}
+footer .contact_form form div {
+  display: flex;
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+}
+footer .contact_form form div .contact_input {
+  height: 3.4375rem;
+  width: 14.375rem;
+  border-radius: 0.8125rem;
+  background-color: #F1F1F3;
+  color: #838291;
+  font-weight: 500;
+  font-size: 0.75rem;
+  padding: 0 0.625rem;
+  border: none;
+}
+footer .contact_form form .subject {
+  height: 3.4375rem;
+  width: 30.3125rem;
+  border-radius: 0.8125rem;
+  background-color: #F1F1F3;
+  color: #838291;
+  font-weight: 500;
+  font-size: 0.75rem;
+  padding: 0 0.625rem;
+  border: none;
+}
+footer .contact_form form .message {
+  height: 8.125rem;
+  width: 30.3125rem;
+  border-radius: 0.8125rem;
+  background-color: #F1F1F3;
+  color: #838291;
+  font-weight: 500;
+  font-size: 0.75rem;
+  padding: 0 0.625rem;
+  border: none;
+}
+footer .contact_form form button {
+  padding: 1.25rem 1.5625rem;
+  border-radius: 0.8125rem;
+  background-color: #7050F0;
+  border: 2px solid #FFFF;
+  color: #FFFF;
+  font-size: 0.9375rem;
+  width: 40%;
+}
+footer .contact_form .contact_media {
+  height: 5rem;
+  width: auto;
+  display: flex;
+  align-items: center;
+}
+
+/*# sourceMappingURL=main.css.map */
