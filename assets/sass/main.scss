@@ -47,8 +47,16 @@ $gray_sec: #F1F1F3;
   flex-direction: column;
 }
 // GRID
-@mixin grid { 
-  display:grid
+@mixin grid{
+  display: grid;
+}
+@mixin grid-col($col_n, $col_px, $gap){
+  grid-template-columns: repeat($col_n, $col_px);
+  column-gap: $gap;
+}
+@mixin grid-row($row_n, $row_px, $gap){
+  grid-template-rows: repeat($row_n, $row_px);
+  row-gap: $gap;
 }
 // GENERAL
 @mixin size($h, $w) { 
@@ -96,6 +104,13 @@ $gray_sec: #F1F1F3;
   background-color: $col;
   box-shadow: 0 0 11px $black_shdw;
 }
+@mixin line($width, $marginBot){
+  @include size(0.3125rem, $width);
+  display: block;
+  margin-bottom: $marginBot;
+  background-color: $purple_prim;
+  content: "";
+}
 
 /*
 ================================================================
@@ -116,6 +131,7 @@ html{
   button{
     border: none;
     outline: none;
+    cursor: pointer;
   }
   .title{
     font-size: $tit;
@@ -134,12 +150,14 @@ HEADER & NAV
 .header { 
   .nav_bar{
     @include space-bet;
-    @include size(78px, 100%);
+    @include size(4.875rem, 100%);
     left: 0;
     align-items: center;
     position: fixed;
-    padding: 1.875rem 10.625rem 0 10.625rem;
+    z-index: 9999 !important;
+    padding: 0 10.625rem;
     background-color: $white_bg;
+    box-shadow: 0 0 0.5rem $black_shdw;
     .nav_logo{
       img{
         @include size(3rem, 3rem);
@@ -181,17 +199,30 @@ MAIN
 main{ 
   .home{
     @include window;
+    @include flex;
+    align-items: center;
     .home_text{
+      .title{
+        font-size: $tit;
+        color: $black_tit;
+        margin:0 0 1.9375rem 0;
+      }
+      .title::before{
+      @include line(5.1875rem, 2rem);
+      }
       .title span{
         color: $purple_prim;
         font-size: 3rem;
       }
-      a #home_cv{
-        @include button($white_bg, $purple_prim)
-      }
-      a #home_projects{
-        @include button($purple_prim, $white_bg);
-        font-weight: $S;
+      div{
+        @include space-bet;
+        a #home_cv{
+          @include button($white_bg, $purple_prim)
+        }
+        a #home_projects{
+          @include button($purple_prim, $white_bg);
+          font-weight: $S;
+        }
       }
     }
   }
@@ -202,17 +233,36 @@ ABOUT SECTION
 */
   .about{
     @include window;
+    @include flex;
+    align-items: center;
     .about_content{
       @include box(3.125rem, 2.5rem, $white_bg);
       @include size(24.9375rem, 29.6875rem);
       @include col;
-      @include space-bet;
+      justify-content: space-evenly;
+      // @include space-bet;
+      .title::before{
+        @include line(5.1875rem, 1rem)
+      }
       p{
         @include paragraph;
       }
-      a button{
-        @include button($white_bg, $purple_prim);
+      a{
+        @include size(3.8994rem, 7.7456rem);
+        button{
+          @include button($white_bg, $purple_prim);
+        }
       }
+    }
+    .about_image{
+      @include box(0, 0, #C4C4C4);
+      @include size(33.5rem, 40.1875rem); 
+      position: absolute;
+      right: 10.625rem;
+      z-index: -1;
+      background-image: url('/assets/img/yo.png');
+      background-repeat: no-repeat;
+      background-size: 40.1875rem;
     }
   }
 /*
@@ -222,6 +272,58 @@ PROJECTS SECTION
 */
   .projects{
     @include window;
+    @include col;
+    @include flex;
+    justify-content: space-evenly;
+    .projects_text{
+      @include space-bet;
+      .title::before{
+        @include line(5.1875rem, 1.25rem)
+      }
+      p{
+        @include size(4.5625rem, 24.75rem);
+        @include paragraph;
+        @include flex;
+        align-items: flex-end;
+      }
+    }
+    .projects_grid{
+      @include grid;
+      @include grid_col(3, auto, 2.5625rem);
+      @include grid_row(1, 16.25rem, 0);
+      .projects_card{
+        @include box(0.625rem, 1.1875rem, $white_bg);
+        @include size(16.25rem, auto);
+      }
+    }
+    .project_button{
+      @include space-bet;
+      .title::after{
+        margin-top: 1.25rem;
+        @include line(25.1875rem, 0)
+      }
+      a{
+        @include flex;
+        align-items: center;
+        button{
+          @include button($white_bg, $purple_prim);
+        }
+      }
+    }
+  }
+/*
+================================================================
+EXPERIENCE SECTION
+================================================================
+*/
+  .experience{
+    @include window;
+    @include flex;
+    align-items: center;
+    .experience_box{
+      @include box(2.5rem, 2.5rem, $white_bg);
+      @include size(32.875rem, 100%)
+    }
   }
 /*
 ================================================================
@@ -230,13 +332,19 @@ SKILLS SECTION
 */
   .skills{
     @include window;
-    padding: 118px 0 70px 0;
+    padding: 7.375rem 0 4.375rem 0;
     @include col;
     @include space-bet;
-    div {
+    div{
       @include size(12.9375rem, auto);
       @include col;
       @include space-bet;
+      .title{ 
+        margin-bottom: 20px;
+      }
+      .title::before{
+      @include line(5.1875rem, 1.25rem);
+      }
       .skills_slider{
         @include size(8rem, auto);
         @include box(1.5625rem, 3.5rem, $white_bg);
@@ -253,10 +361,15 @@ footer{
   @include window;
   @include row;
   @include space-bet;
-  .contact_text{ 
+  align-items: center;
+  .contact_text{
+    .title::before{
+      @include line(5.1875rem, 1.25rem)
+    }
     p{
+      margin-top: 1.5rem;
       line-height: 165%;
-      width: 313px;
+      width: 19.5625rem;
       @include paragraph;
     }
   }
@@ -284,6 +397,8 @@ footer{
       .message{
         @include size(8.125rem, 30.3125rem);
         @include input;
+        padding-top: 1.3125rem;
+        resize: none;
       }
       button{
         @include button($white_bg, $purple_prim);
