@@ -6,7 +6,7 @@
     <meta name="description" content="Sitio web de Franco Gomez como Software Developer" />
 
     <!-- favicon -->
-    <link rel="icon" href="assets/img/favicon.png" />
+    <link rel="icon" href="assets/img/favicon.ico" />
 
 
     <!-- general metatags -->
@@ -33,7 +33,7 @@
 
       <nav class="nav_bar">
         <div class="nav_logo">
-          <img src="assets/img/logo.png" alt="logo.png" title="Franco Gomez" />
+          <a href="#home"><img src="assets/img/logo.png" alt="logo.png" title="Franco Gomez" /></a>
         </div>
         <div class="nav_menu">
           <ul class="nav_list">
@@ -52,7 +52,7 @@
           </ul>
         </div>
         <div class="nav_btn">
-          <a href="https://github.com/"><button>Contacto</button></a>
+          <a href="#contact"><button>Contacto</button></a>
         </div>
       </nav>
 
@@ -62,33 +62,33 @@
 
       <section class="home" id="home">
         <div class="home_text">
-          <span class="line"></span>
           <h1 class="title">Hola,<br>soy Franco<br><span>Web developer</span></h1>
-          <a href=""><button id="home_cv">Descargar CV</button></a>
-          <a href=""><button id="home_projects">Ver proyectos</button></a>
+          <div>
+            <a href=""><button id="home_cv">Descargar CV</button></a>
+            <a href="#projects"><button id="home_projects">Ver proyectos</button></a>
+          </div>
         </div>
       </section>
 
       <section class="about" id="about">
-        <div class="about_content">
-          <span class="line"></span>
+        <div class="about_content" >
           <h2 class="title">Sobre mí</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua odio. Morbi.</p>
-          <a href=""><button>Leer más</button></a>
+          <p class="lft">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua odio. Morbi.</p>
+          <a href=""><button class="rgth">Leer más</button></a>
         </div>
         <div class="about_image">
-          <img src="" alt="">
         </div>
       </section>
 
       <section class="projects" id="projects">
         <div class="projects_text">
-          <span class="line"></span>
           <h2 class="title">Proyectos recientes</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua odio. Morbi.</p>
         </div>
         <div class="projects_grid">
-
+          <div class="projects_card first"></div>
+          <div class="projects_card second"></div>
+          <div class="projects_card third"></div>
         </div>
         <div class="project_button">
           <h2 class="title">Más proyectos</h2>
@@ -97,7 +97,9 @@
       </section>
 
       <section class="experience" id="experience">
+        <div class="experience_box">
 
+        </div>
       </section>
 
       <section class="skills" id="skills">
@@ -116,18 +118,17 @@
     <footer class="contact footer" id="contact">
 
       <div class="contact_text">
-        <span class="line"></span>
         <h2 class="title">let's work<br>together</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
       </div>
       <div class="contact_form">
         <form action="" method="">
           <div>
-            <input type="text" name="name" placeholder="nombre" class="contact_input">
-            <input type="email" name="email" placeholder="email" class="contact_input">
+            <input type="text" name="name" placeholder="nombre" class="contact_input" required>
+            <input type="email" name="email" placeholder="email" class="contact_input" required>
           </div>
           <input type="text" name="subject" placeholder="asunto" class="contact_input subject">
-          <input type="text" name="message" placeholder="mensaje" class="contact_input message">
+          <textarea name="message" placeholder="mensaje" maxlength="300" class="contact_input message"></textarea>
           <button>Enviar mensaje</button>
         </form>
         <div class="contact_media">
