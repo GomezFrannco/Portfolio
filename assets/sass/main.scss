@@ -5,8 +5,8 @@
 // --------------------------------------------------
 // FONT
 $int: 'Inter', sans-serif;
-$tit: 3rem;
-$par: 1rem;
+$tit: 48px;
+$par: 16px;
 $btn: $par;
 $L: 300;
 $R: 400;
@@ -64,7 +64,7 @@ $gray_sec: #F1F1F3;
   width: $w;
 }
 @mixin transition($time) {
-  transition: all $time ease;
+  transition: all $time ease-in-out;
 }
 @mixin window{
   padding-top: 48px;
@@ -93,7 +93,7 @@ $gray_sec: #F1F1F3;
   border-radius: 0.8125rem;
   background-color: $gray_sec;
   color: $gray_prim;
-  font-weight: $M;
+  font-weight: $S;
   font-size: 0.75rem;
   padding: 0 0.625rem;
   border: none;
@@ -127,6 +127,7 @@ html{
   list-style: none;
   body{
     padding: $body_padd;
+    // font-size: 5px ;
   }
   button{
     border: none;
@@ -157,7 +158,7 @@ HEADER & NAV
     z-index: 9999 !important;
     padding: 0 10.625rem;
     background-color: $white_bg;
-    box-shadow: 0 0 0.5rem $black_shdw;
+    // box-shadow: 0 0 0.5rem $black_shdw;
     .nav_logo{
       img{
         @include size(3rem, 3rem);
@@ -170,9 +171,17 @@ HEADER & NAV
         @include space-bet;
         li{
           a{ 
+            @include transition(200ms);
+            padding: 14px 9px;
+            z-index: 999;
             font-size: 0.8125rem;
             font-weight: $S;
             color: $gray_prim;
+          }
+          a:hover{
+            background: rgba(112, 80, 240, 0.08);
+            color: $purple_prim; 
+            border-radius: 7px;
           }
         }
       }
@@ -189,6 +198,14 @@ HEADER & NAV
         }
       }
     }
+  }
+  .nav_shadow_in {
+    @include transition(300ms);
+    box-shadow: 0 0 0.5rem $black_shdw;
+  }
+  .nav_shadow_out {
+    @include transition(250ms);
+    box-shadow: none;
   }
 }
 /*
@@ -404,6 +421,14 @@ footer{
         @include button($white_bg, $purple_prim);
         font-size: 0.9375rem;
         width: 40%;
+      }
+      .contact_input:focus::placeholder{
+        color: $purple_prim; 
+      }
+      .contact_input:focus{
+        color: $purple_prim; 
+        outline: 2px solid $purple_prim;
+        background-color: $white_bg;
       }
     }
     .contact_media{
