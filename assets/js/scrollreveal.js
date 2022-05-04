@@ -10,11 +10,16 @@ const $bttm = document.querySelectorAll(".bttm");
  */
 const sr = ScrollReveal({
   delay: 100,
-  duration: 1400,
-  distance: "45px",
+  duration: 800,
+  distance: "25px",
   easing: "ease-out",
 });
 
+sr.reveal($top, {
+  origin: "top",
+  duration: "600",
+  distance: "10px"
+})
 sr.reveal($rigth, {
   origin: "rigth",
 });
