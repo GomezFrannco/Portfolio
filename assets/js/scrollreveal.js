@@ -1,64 +1,34 @@
 /**
- *  Scroll Reveal Options
+ *  DOM elements
  */
-var rigth = {
-  duration: 1500,
-  origin: 'rigth',
-  distance: '50px',
-  easing: 'ease-out',
-  reset: true
-}
-var left = {
-  duration: 1500,
-  origin: 'left',
-  distance: '50px',
-  easing: 'ease-out',
-  reset: true
-}
-var top = {
-  duration: 1500,
-  origin: 'top',
-  distance: '50px',
-  easing: 'ease-out',
-  reset: true
-}
-var bottom = {
-  duration: 1500,
-  origin: 'bottom',
-  distance: '50px',
-  easing: 'ease-out',
-  reset: true
-}
-
+const $left = document.querySelectorAll(".lft");
+const $rigth = document.querySelectorAll(".rgth");
+const $top = document.querySelectorAll(".top");
+const $bttm = document.querySelectorAll(".bttm");
 /**
- *  DOM Elements
+ *  Scroll Reveal
  */
-let titles = document.querySelectorAll('title');
-let node = document.querySelectorAll('.lft')
-let nd = document.querySelectorAll('.rgth')
-
-/**
- *  Scroll Reveal Code 
- */
-
-ScrollReveal().reveal(node, {
-  duration: 1500,
-  origin: 'rigth',
-  distance: '-40px',
-  easing: 'ease-out',
-  reset: true
-
-})
-
-ScrollReveal().reveal(nd, {
-  duration: 1500,
-  origin: 'top',
-  distance: '-50px',
-  easing: 'ease-out',
-  reset: true
-})
-
-
-
-
-ScrollReveal()
+ScrollReveal().reveal($left, {
+  duration: 1600,
+  origin: "left",
+  distance: "50px",
+  easing: "ease-out",
+});
+ScrollReveal().reveal($rigth, {
+  duration: 1600,
+  origin: "rigth",
+  distance: "50px",
+  easing: "ease-out",
+});
+ScrollReveal().reveal($top, {
+  duration: 1600,
+  origin: "top",
+  distance: "50px",
+  easing: "ease-out",
+});
+ScrollReveal().reveal($bttm, {
+  duration: 1600,
+  origin: "bottom",
+  distance: "50px",
+  easing: "ease-out",
+});
