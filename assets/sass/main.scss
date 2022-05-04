@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 
 // --------------------------------------------------
 // VARIABLES
 // --------------------------------------------------
 // FONT
-$int: 'Inter', sans-serif;
+$int: "Inter", sans-serif;
 $tit: 48px;
 $par: 16px;
 $btn: $par;
@@ -20,12 +20,12 @@ $win_w: 100vw;
 $body_padd: 0 10.625rem 1.875rem 10.625rem;
 $btn_padd: 1.25rem 1.5625rem;
 // COLORS
-$white_bg: #FFFF;
-$black_tit: #3C3A5D;
+$white_bg: #ffff;
+$black_tit: #3c3a5d;
 $black_shdw: #00000040;
-$purple_prim: #7050F0;
+$purple_prim: #7050f0;
 $gray_prim: #838291;
-$gray_sec: #F1F1F3;
+$gray_sec: #f1f1f3;
 
 // --------------------------------------------------
 // MIXINS
@@ -37,7 +37,7 @@ $gray_sec: #F1F1F3;
 @mixin space-bet {
   @include flex;
   justify-content: space-between;
-} 
+}
 @mixin row {
   @include flex;
   flex-direction: row;
@@ -47,26 +47,26 @@ $gray_sec: #F1F1F3;
   flex-direction: column;
 }
 // GRID
-@mixin grid{
+@mixin grid {
   display: grid;
 }
-@mixin grid-col($col_n, $col_px, $gap){
+@mixin grid-col($col_n, $col_px, $gap) {
   grid-template-columns: repeat($col_n, $col_px);
   column-gap: $gap;
 }
-@mixin grid-row($row_n, $row_px, $gap){
+@mixin grid-row($row_n, $row_px, $gap) {
   grid-template-rows: repeat($row_n, $row_px);
   row-gap: $gap;
 }
 // GENERAL
-@mixin size($h, $w) { 
+@mixin size($h, $w) {
   height: $h;
   width: $w;
 }
 @mixin transition($time) {
   transition: all $time ease-in-out;
 }
-@mixin window{
+@mixin window {
   padding-top: 48px;
   height: $win_h;
 }
@@ -76,20 +76,20 @@ $gray_sec: #F1F1F3;
   font-weight: $B;
   color: $black_tit;
 }
-@mixin paragraph { 
+@mixin paragraph {
   font-size: $par;
   font-weight: $M;
   color: $gray_prim;
 }
 // COMPONENTS
-@mixin button($col, $bg) { 
+@mixin button($col, $bg) {
   padding: $btn_padd;
   border-radius: 0.8125rem;
   background-color: $bg;
   border: 2px solid $col;
   color: $col;
 }
-@mixin input(){
+@mixin input() {
   border-radius: 0.8125rem;
   background-color: $gray_sec;
   color: $gray_prim;
@@ -98,13 +98,13 @@ $gray_sec: #F1F1F3;
   padding: 0 0.625rem;
   border: none;
 }
-@mixin box($p_Y, $p_X, $col){
+@mixin box($p_Y, $p_X, $col) {
   padding: $p_Y $p_X;
   border-radius: 1.8125rem;
   background-color: $col;
   box-shadow: 0 0 11px $black_shdw;
 }
-@mixin line($width, $marginBot){
+@mixin line($width, $marginBot) {
   @include size(0.3125rem, $width);
   display: block;
   margin-bottom: $marginBot;
@@ -117,36 +117,36 @@ $gray_sec: #F1F1F3;
 GENERAL
 ================================================================
 */
-html{
+html {
   scroll-behavior: smooth;
 }
-*{
+* {
   font-family: $int;
   font-size: $par;
   text-decoration: none;
   list-style: none;
-  body{
+  body {
     padding: $body_padd;
     // font-size: 5px ;
   }
-  button{
+  button {
     border: none;
     outline: none;
     cursor: pointer;
-    @include transition(200ms)
+    @include transition(200ms);
   }
-  button:hover{
+  button:hover {
     transform: scale(1.05);
   }
-  button:active{
+  button:active {
     transform: scale(0.65);
   }
-  .title{
+  .title {
     font-size: $tit;
     color: $black_tit;
   }
-  .line{
-    background-color:red;
+  .line {
+    background-color: red;
   }
 }
 
@@ -155,8 +155,8 @@ html{
 HEADER & NAV
 ================================================================
 */
-.header { 
-  .nav_bar{
+.header {
+  .nav_bar {
     @include space-bet;
     @include size(4.875rem, 100%);
     left: 0;
@@ -165,19 +165,23 @@ HEADER & NAV
     z-index: 9999 !important;
     padding: 0 10.625rem;
     background-color: $white_bg;
-    // box-shadow: 0 0 0.5rem $black_shdw;
-    .nav_logo{
-      img{
+    .nav_logo {
+      img {
         @include size(3rem, 3rem);
       }
     }
-    .nav_menu{
-      .nav_list{
+    .nav_menu {
+      .active {
+        background: rgba(112, 80, 240, 0.08);
+        color: $purple_prim !important;
+        border-radius: 7px;
+      }
+      .nav_list {
         width: 20.75rem;
         @include row;
         @include space-bet;
-        li{
-          a{ 
+        li {
+          a {
             @include transition(200ms);
             padding: 14px 9px;
             z-index: 999;
@@ -185,17 +189,17 @@ HEADER & NAV
             font-weight: $S;
             color: $gray_prim;
           }
-          a:hover{
+          a:hover {
             background: rgba(112, 80, 240, 0.08);
-            color: $purple_prim; 
+            color: $purple_prim;
             border-radius: 7px;
           }
         }
       }
     }
-    .nav_btn{ 
-      a{ 
-        button{
+    .nav_btn {
+      a {
+        button {
           @include size(3rem, auto);
           padding: 0 1.5625rem;
           border-radius: 0.625rem;
@@ -220,30 +224,30 @@ HEADER & NAV
 MAIN
 ================================================================
 */
-main{ 
-  .home{
+main {
+  .home {
     @include window;
     @include flex;
     align-items: center;
-    .home_text{
-      .title{
+    .home_text {
+      .title {
         font-size: $tit;
         color: $black_tit;
-        margin:0 0 1.9375rem 0;
+        margin: 0 0 1.9375rem 0;
       }
-      .title::before{
-      @include line(5.1875rem, 2rem);
+      .title::before {
+        @include line(5.1875rem, 2rem);
       }
-      .title span{
+      .title span {
         color: $purple_prim;
         font-size: 3rem;
       }
-      div{
+      div {
         @include space-bet;
-        a #home_cv{
-          @include button($white_bg, $purple_prim)
+        a #home_cv {
+          @include button($white_bg, $purple_prim);
         }
-        a #home_projects{
+        a #home_projects {
           @include button($purple_prim, $white_bg);
           font-weight: $S;
         }
@@ -255,125 +259,125 @@ main{
 ABOUT SECTION
 ================================================================
 */
-  .about{
+  .about {
     @include window;
     @include flex;
     align-items: center;
-    .about_content{
+    .about_content {
       @include box(3.125rem, 2.5rem, $white_bg);
       @include size(24.9375rem, 29.6875rem);
       @include col;
       justify-content: space-evenly;
       // @include space-bet;
-      .title::before{
-        @include line(5.1875rem, 1rem)
+      .title::before {
+        @include line(5.1875rem, 1rem);
       }
-      p{
+      p {
         @include paragraph;
       }
-      a{
+      a {
         @include size(3.8994rem, 7.7456rem);
-        button{
+        button {
           @include button($white_bg, $purple_prim);
         }
       }
     }
-    .about_image{
-      @include box(0, 0, #C4C4C4);
-      @include size(33.5rem, 40.1875rem); 
+    .about_image {
+      @include box(0, 0, #c4c4c4);
+      @include size(33.5rem, 40.1875rem);
       position: absolute;
       right: 10.625rem;
       z-index: -1;
-      background-image: url('/assets/img/yo.png');
+      background-image: url("/assets/img/yo.png");
       background-repeat: no-repeat;
       background-size: 40.1875rem;
     }
   }
-/*
+  /*
 ================================================================
 PROJECTS SECTION
 ================================================================
 */
-  .projects{
+  .projects {
     @include window;
     @include col;
     @include flex;
     justify-content: space-evenly;
-    .projects_text{
+    .projects_text {
       @include space-bet;
-      .title::before{
-        @include line(5.1875rem, 1.25rem)
+      .title::before {
+        @include line(5.1875rem, 1.25rem);
       }
-      p{
+      p {
         @include size(4.5625rem, 24.75rem);
         @include paragraph;
         @include flex;
         align-items: flex-end;
       }
     }
-    .projects_grid{
+    .projects_grid {
       @include grid;
       @include grid_col(3, auto, 2.5625rem);
       @include grid_row(1, 16.25rem, 0);
-      .projects_card{
+      .projects_card {
         @include box(0.625rem, 1.1875rem, $white_bg);
         @include size(16.25rem, auto);
       }
     }
-    .project_button{
+    .project_button {
       @include space-bet;
-      .title::after{
+      .title::after {
         margin-top: 1.25rem;
-        @include line(25.1875rem, 0)
+        @include line(25.1875rem, 0);
       }
-      a{
+      a {
         @include flex;
         align-items: center;
-        button{
+        button {
           @include button($white_bg, $purple_prim);
         }
       }
     }
   }
-/*
+  /*
 ================================================================
 EXPERIENCE SECTION
 ================================================================
 */
-  .experience{
+  .experience {
     @include window;
     @include flex;
     align-items: center;
-    .experience_box{
+    .experience_box {
       @include box(2.5rem, 2.5rem, $white_bg);
-      @include size(32.875rem, 100%)
+      @include size(32.875rem, 100%);
     }
   }
-/*
+  /*
 ================================================================
 SKILLS SECTION
 ================================================================
 */
-  .skills{
+  .skills {
     @include window;
     padding: 7.375rem 0 4.375rem 0;
     @include col;
     @include space-bet;
-    div{
+    div {
       @include size(12.9375rem, auto);
       @include col;
       @include space-bet;
-      .title{ 
+      .title {
         margin-bottom: 20px;
       }
-      .title::before{
-      @include line(5.1875rem, 1.25rem);
+      .title::before {
+        @include line(5.1875rem, 1.25rem);
       }
-      .skills_slider{
+      .skills_slider {
         @include size(8rem, auto);
         @include box(1.5625rem, 3.5rem, $white_bg);
       }
-    }  
+    }
   }
 }
 /*
@@ -381,64 +385,64 @@ SKILLS SECTION
 FOOTER & CONTACT SECTION
 ================================================================
 */
-footer{ 
+footer {
   @include window;
   @include row;
   @include space-bet;
   align-items: center;
-  .contact_text{
-    .title::before{
-      @include line(5.1875rem, 1.25rem)
+  .contact_text {
+    .title::before {
+      @include line(5.1875rem, 1.25rem);
     }
-    p{
+    p {
       margin-top: 1.5rem;
       line-height: 165%;
       width: 19.5625rem;
       @include paragraph;
     }
   }
-  .contact_form{
+  .contact_form {
     @include size(32.8125rem, auto);
     @include box(2.1875rem, 2.375rem, $white_bg);
     @include col;
     @include space-bet;
-    form{
+    form {
       @include size(23.3125rem, 30.3125rem);
       @include col;
       @include space-bet;
-      div{
+      div {
         @include row;
         @include space-bet;
-        .contact_input{
+        .contact_input {
           @include size(3.4375rem, 14.375rem);
           @include input;
         }
       }
-      .subject{
+      .subject {
         @include size(3.4375rem, 30.3125rem);
         @include input;
       }
-      .message{
+      .message {
         @include size(8.125rem, 30.3125rem);
         @include input;
         padding-top: 1.3125rem;
         resize: none;
       }
-      button{
+      button {
         @include button($white_bg, $purple_prim);
         font-size: 0.9375rem;
         width: 40%;
       }
-      .contact_input:focus::placeholder{
-        color: $purple_prim; 
+      .contact_input:focus::placeholder {
+        color: $purple_prim;
       }
-      .contact_input:focus{
-        color: $purple_prim; 
+      .contact_input:focus {
+        color: $purple_prim;
         outline: 2px solid $purple_prim;
         background-color: $white_bg;
       }
     }
-    .contact_media{
+    .contact_media {
       @include size(5rem, auto);
       @include flex;
       align-items: center;
