@@ -8,27 +8,19 @@ const $bttm = document.querySelectorAll(".bttm");
 /**
  *  Scroll Reveal
  */
-ScrollReveal().reveal($left, {
-  duration: 1600,
-  origin: "left",
-  distance: "50px",
+const sr = ScrollReveal({
+  delay: 100,
+  duration: 1400,
+  distance: "45px",
   easing: "ease-out",
 });
-ScrollReveal().reveal($rigth, {
-  duration: 1600,
+
+sr.reveal($rigth, {
   origin: "rigth",
-  distance: "50px",
-  easing: "ease-out",
 });
-ScrollReveal().reveal($top, {
-  duration: 1600,
-  origin: "top",
-  distance: "50px",
-  easing: "ease-out",
-});
-ScrollReveal().reveal($bttm, {
-  duration: 1600,
+sr.reveal($bttm, {
   origin: "bottom",
-  distance: "50px",
-  easing: "ease-out",
+});
+sr.reveal($left, {
+  origin: "left",
 });
