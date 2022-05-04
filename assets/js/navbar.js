@@ -8,7 +8,7 @@ const $sections = document.querySelectorAll("section[id]");
  *  navigation bar hide & reveal box-shadow
  */
 window.addEventListener("scroll", () => {
-  if (window.pageYOffset > 0) {
+  if (window.scrollY > 0) {
     $nav.classList.add("nav_shadow_in");
     $nav.classList.remove("nav_shadow_out");
   } else {
@@ -31,13 +31,13 @@ $menu.forEach((element) => {
  *  navigation menu scroll active
  */
 const scrollActive = function () {
-  const windowY = window.pageYOffset;
+  let scrollY = window.scrollY;
   $sections.forEach((section) => {
     const height = section.offsetHeight;
-    const top = section.offsetTop - 78;
+    const top = section.offsetTop - 100;
     let id = section.getAttribute("id");
     let element = document.querySelector(`.nav_menu a[href*=${id}]`);
-    if (windowY > top && windowY <= top + height) {
+    if (scrollY > top && scrollY <= top + height) {
       element.classList.add("active");
     } else {
       element.classList.remove("active");
