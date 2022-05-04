@@ -82,11 +82,11 @@ $gray_sec: #f1f1f3;
   color: $gray_prim;
 }
 // COMPONENTS
-@mixin button($col, $bg) {
+@mixin button($col, $bg, $brdr) {
   padding: $btn_padd;
   border-radius: 0.8125rem;
   background-color: $bg;
-  border: 2px solid $col;
+  border: 2px solid $brdr;
   color: $col;
 }
 @mixin input() {
@@ -127,7 +127,7 @@ html {
   list-style: none;
   body {
     padding: $body_padd;
-    // font-size: 5px ;
+    padding-bottom: 0;
   }
   button {
     border: none;
@@ -245,10 +245,10 @@ main {
       div {
         @include space-bet;
         a #home_cv {
-          @include button($white_bg, $purple_prim);
+          @include button($white_bg, $purple_prim, $purple_prim);
         }
         a #home_projects {
-          @include button($purple_prim, $white_bg);
+          @include button($purple_prim, $white_bg, $purple_prim);
           font-weight: $S;
         }
       }
@@ -278,7 +278,7 @@ ABOUT SECTION
       a {
         @include size(3.8994rem, 7.7456rem);
         button {
-          @include button($white_bg, $purple_prim);
+          @include button($white_bg, $purple_prim, $purple_prim);
         }
       }
     }
@@ -305,14 +305,17 @@ PROJECTS SECTION
     justify-content: space-evenly;
     .projects_text {
       @include space-bet;
+      align-items: flex-end;
       .title::before {
         @include line(5.1875rem, 1.25rem);
       }
       p {
         @include size(4.5625rem, 24.75rem);
         @include paragraph;
-        @include flex;
-        align-items: flex-end;
+      }
+      p span {
+        color: $black_tit;
+        font-weight: $B;
       }
     }
     .projects_grid {
@@ -334,7 +337,7 @@ PROJECTS SECTION
         @include flex;
         align-items: center;
         button {
-          @include button($white_bg, $purple_prim);
+          @include button($white_bg, $purple_prim, $purple_prim);
         }
       }
     }
@@ -351,6 +354,29 @@ EXPERIENCE SECTION
     .experience_box {
       @include box(2.5rem, 2.5rem, $white_bg);
       @include size(32.875rem, 100%);
+      .experience_title{
+         @include space-bet;
+         align-items: flex-end;
+        .title::before{
+          @include line(5.1875rem, 1.25rem);
+        }
+        .experience_icons {
+          margin-bottom: 0.3125rem;
+          .material-symbols-rounded{
+            font-size: 1.875rem;
+            color: $gray_prim;
+            cursor: pointer;
+          }
+          .vertical {
+            transform: rotate(90deg);
+            color: $purple_prim;
+            cursor: default;
+          }
+          .active {
+            color: $purple_prim;
+          }
+        }
+      }
     }
   }
   /*
@@ -429,7 +455,7 @@ footer {
         resize: none;
       }
       button {
-        @include button($white_bg, $purple_prim);
+        @include button($white_bg, $purple_prim, $purple_prim);
         font-size: 0.9375rem;
         width: 40%;
       }

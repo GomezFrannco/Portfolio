@@ -16,6 +16,7 @@ html {
 }
 * body {
   padding: 0 10.625rem 1.875rem 10.625rem;
+  padding-bottom: 0;
 }
 * button {
   border: none;
@@ -159,7 +160,7 @@ main .home .home_text div a #home_cv {
   padding: 1.25rem 1.5625rem;
   border-radius: 0.8125rem;
   background-color: #7050f0;
-  border: 2px solid #ffff;
+  border: 2px solid #7050f0;
   color: #ffff;
 }
 main .home .home_text div a #home_projects {
@@ -208,7 +209,7 @@ main .about .about_content a button {
   padding: 1.25rem 1.5625rem;
   border-radius: 0.8125rem;
   background-color: #7050f0;
-  border: 2px solid #ffff;
+  border: 2px solid #7050f0;
   color: #ffff;
 }
 main .about .about_image {
@@ -236,6 +237,7 @@ main .projects {
 main .projects .projects_text {
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
 }
 main .projects .projects_text .title::before {
   height: 0.3125rem;
@@ -251,8 +253,10 @@ main .projects .projects_text p {
   font-size: 16px;
   font-weight: 500;
   color: #838291;
-  display: flex;
-  align-items: flex-end;
+}
+main .projects .projects_text p span {
+  color: #3c3a5d;
+  font-weight: 700;
 }
 main .projects .projects_grid {
   display: grid;
@@ -290,7 +294,7 @@ main .projects .project_button a button {
   padding: 1.25rem 1.5625rem;
   border-radius: 0.8125rem;
   background-color: #7050f0;
-  border: 2px solid #ffff;
+  border: 2px solid #7050f0;
   color: #ffff;
 }
 main .experience {
@@ -306,6 +310,35 @@ main .experience .experience_box {
   box-shadow: 0 0 11px #00000040;
   height: 32.875rem;
   width: 100%;
+}
+main .experience .experience_box .experience_title {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+main .experience .experience_box .experience_title .title::before {
+  height: 0.3125rem;
+  width: 5.1875rem;
+  display: block;
+  margin-bottom: 1.25rem;
+  background-color: #7050f0;
+  content: "";
+}
+main .experience .experience_box .experience_title .experience_icons {
+  margin-bottom: 0.3125rem;
+}
+main .experience .experience_box .experience_title .experience_icons .material-symbols-rounded {
+  font-size: 1.875rem;
+  color: #838291;
+  cursor: pointer;
+}
+main .experience .experience_box .experience_title .experience_icons .vertical {
+  transform: rotate(90deg);
+  color: #7050f0;
+  cursor: default;
+}
+main .experience .experience_box .experience_title .experience_icons .active {
+  color: #7050f0;
 }
 main .skills {
   padding-top: 48px;
@@ -439,7 +472,7 @@ footer .contact_form form button {
   padding: 1.25rem 1.5625rem;
   border-radius: 0.8125rem;
   background-color: #7050f0;
-  border: 2px solid #ffff;
+  border: 2px solid #7050f0;
   color: #ffff;
   font-size: 0.9375rem;
   width: 40%;
