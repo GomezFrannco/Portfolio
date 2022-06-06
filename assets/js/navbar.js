@@ -1,27 +1,22 @@
-/**
- *  DOM elements
- */
-const $nav = document.querySelector("#nav");
-const $menu = document.querySelectorAll(".nav_link");
-const $sections = document.querySelectorAll("section[id]");
+import * as dom from "./dom.js";
 /**
  *  navigation bar hide & reveal box-shadow
  */
 window.addEventListener("scroll", () => {
   if (window.scrollY > 0) {
-    $nav.classList.add("nav_shadow_in");
-    $nav.classList.remove("nav_shadow_out");
+    dom.$nav.classList.add("nav_shadow_in");
+    dom.$nav.classList.remove("nav_shadow_out");
   } else {
-    $nav.classList.add("nav_shadow_out");
-    $nav.classList.remove("nav_shadow_in");
+    dom.$nav.classList.add("nav_shadow_out");
+    dom.$nav.classList.remove("nav_shadow_in");
   }
 });
 /**
  *  navigation menu active and remove
  */
-$menu.forEach((element) => {
+dom.$menu.forEach((element) => {
   element.addEventListener("click", (e) => {
-    $menu.forEach((element) => {
+    dom.$menu.forEach((element) => {
       element.classList.remove("active");
     });
     e.target.classList.add("active");
@@ -32,7 +27,7 @@ $menu.forEach((element) => {
  */
 const scrollActive = function () {
   let scrollY = window.scrollY;
-  $sections.forEach((section) => {
+  dom.$sections.forEach((section) => {
     const height = section.offsetHeight;
     const top = section.offsetTop - 100;
     let id = section.getAttribute("id");

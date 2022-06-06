@@ -1,10 +1,4 @@
-/**
- *  DOM elements
- */
-const $left = document.querySelectorAll(".lft");
-const $rigth = document.querySelectorAll(".rgth");
-const $top = document.querySelectorAll(".top");
-const $bttm = document.querySelectorAll(".bttm");
+import * as dom from "./dom.js";
 /**
  *  Scroll Reveal
  */
@@ -15,17 +9,17 @@ const sr = ScrollReveal({
   easing: "ease-out",
 });
 
-sr.reveal($top, {
+sr.reveal(dom.$top, {
   origin: "top",
   duration: "600",
-  distance: "10px"
-})
-sr.reveal($rigth, {
+  distance: "10px",
+});
+sr.reveal(dom.$rigth, {
   origin: "rigth",
 });
-sr.reveal($bttm, {
+sr.reveal(dom.$bttm, {
   origin: "bottom",
 });
-sr.reveal($left, {
+sr.reveal(dom.$left, {
   origin: "left",
 });
