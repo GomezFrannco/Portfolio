@@ -1,8 +1,10 @@
-# Franco's Portfolio
+# My Personal Portfolio
 
-My personal website as a Web Developer.
+![Main](assets/img/main_preview.png)
 
-Creator: [Franco Gomez](https://github.com/GomezFrannco)
+This is my personal website as a Web Developer.
+
+By: [Franco Gomez](https://github.com/GomezFrannco)
 
 # Used technologies
 
@@ -11,7 +13,6 @@ Creator: [Franco Gomez](https://github.com/GomezFrannco)
 * Sass
 * JavaScript
 * ScrollReveal.js
-* Owl.carousel.js
-* Express.js
+<!-- * Owl.carousel.js -->
 
 > © 2022 Franco Gomez
