@@ -449,6 +449,8 @@ main {
       .skills_slider {
         @include size(8rem, auto);
         @include box(1.5625rem, 3.5rem, $white_bg);
+        @include flex;
+        flex-direction: row;
       }
     }
   }

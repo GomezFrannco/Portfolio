@@ -11,5 +11,8 @@
   "license": "ISC",
   "devDependencies": {
     "sass": "^1.49.9"
+  },
+  "dependencies": {
+    "owl.carousel": "^2.3.4"
   }
 }
