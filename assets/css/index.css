@@ -54,9 +54,15 @@ HEADER & NAV
   padding: 0 10.625rem;
   background-color: #ffff;
 }
-.header .nav_bar .nav_logo img {
+.header .nav_bar .nav_logo a {
   height: 3rem;
   width: 3rem;
+  font-weight: 700;
+  color: #3c3a5d;
+}
+.header .nav_bar .nav_logo a span {
+  font-weight: 700;
+  color: #7050f0;
 }
 .header .nav_bar .nav_menu .active {
   background: rgba(112, 80, 240, 0.08);
@@ -74,8 +80,8 @@ HEADER & NAV
   transition: all 200ms ease-in-out;
   padding: 14px 9px;
   z-index: 999;
-  font-size: 0.8125rem;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 500;
   color: #838291;
 }
 .header .nav_bar .nav_menu .nav_list li a:hover {
@@ -154,6 +160,29 @@ main .home .home_text div a #home_projects {
   border: 2px solid #7050f0;
   color: #7050f0;
   font-weight: 600;
+}
+main .home .home_logo {
+  display: flex;
+  height: 100%;
+  width: calc(100% - 28.4375rem);
+  justify-content: center;
+  align-items: center;
+}
+main .home .home_logo img {
+  height: 17.5rem;
+  width: 17.5rem;
+  animation: move 6s ease-in-out infinite;
+}
+@keyframes move {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(120px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 main .home .home_wave {
   height: 9.375rem;

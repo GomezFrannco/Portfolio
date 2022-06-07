@@ -167,8 +167,14 @@ HEADER & NAV
     padding: 0 10.625rem;
     background-color: $white_bg;
     .nav_logo {
-      img {
+      a {
         @include size(3rem, 3rem);
+        font-weight: $B;
+        color: $black_tit;
+        span{
+          font-weight: $B;
+          color: $purple_prim;
+        }
       }
     }
     .nav_menu {
@@ -186,8 +192,8 @@ HEADER & NAV
             @include transition(200ms);
             padding: 14px 9px;
             z-index: 999;
-            font-size: 0.8125rem;
-            font-weight: $S;
+            font-size: 14px;
+            font-weight: $M;
             color: $gray_prim;
           }
           a:hover {
@@ -255,6 +261,27 @@ main {
         a #home_projects {
           @include button($purple_prim, transparent, $purple_prim);
           font-weight: $S;
+        }
+      }
+    }
+    .home_logo{
+      @include flex;
+      @include size(100%, calc(100% - 28.4375rem));
+      justify-content: center;
+      align-items: center;
+      img{
+        @include size(17.5rem, 17.5rem);
+        animation: move 6s ease-in-out infinite;
+      }
+      @keyframes move {
+        0% {
+          transform: translateX(0);
+        }
+        50% {
+          transform: translateX(120px);
+        }
+        100% {
+          transform: translateX(0)
         }
       }
     }
