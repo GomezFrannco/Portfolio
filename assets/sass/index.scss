@@ -446,11 +446,17 @@ main {
       .title::before {
         @include line(5.1875rem, 1.25rem);
       }
-      .skills_slider {
-        @include size(8rem, auto);
-        @include box(1.5625rem, 3.5rem, $white_bg);
-        @include flex;
-        flex-direction: row;
+      .skills_box {
+        @include size(8rem, 100%);
+        @include box(10px, 3.5rem, $white_bg);
+        .skills_slider{
+          @include space-bet;
+          flex-direction: row;
+          div{
+            @include size(100%, 95px);
+            justify-content: center;
+          }
+        }
       }
     }
   }

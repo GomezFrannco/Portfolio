@@ -405,15 +405,23 @@ main .skills div .title::before {
   background-color: #7050f0;
   content: "";
 }
-main .skills div .skills_slider {
+main .skills div .skills_box {
   height: 8rem;
-  width: auto;
-  padding: 1.5625rem 3.5rem;
+  width: 100%;
+  padding: 10px 3.5rem;
   border-radius: 1.8125rem;
   background-color: #ffff;
   box-shadow: 0 0 11px #00000040;
+}
+main .skills div .skills_box .skills_slider {
   display: flex;
+  justify-content: space-between;
   flex-direction: row;
+}
+main .skills div .skills_box .skills_slider div {
+  height: 100%;
+  width: 95px;
+  justify-content: center;
 }
 
 /*

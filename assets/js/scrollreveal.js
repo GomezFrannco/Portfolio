@@ -3,7 +3,7 @@ import * as dom from "./dom.js";
  *  Scroll Reveal
  */
 const sr = ScrollReveal({
-  delay: 100,
+  delay: 220,
   duration: 800,
   distance: "25px",
   easing: "ease-out",
