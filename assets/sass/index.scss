@@ -436,25 +436,24 @@ main {
      background-image: linear-gradient(0deg, $white_bg 85%, $purple_sec 100%);
     justify-content: space-around;
     padding: $page_padd;
-    div {
-      @include size(12.9375rem, auto);
-      @include col;
-      @include space-bet;
+    div{
       .title {
         margin-bottom: 20px;
       }
       .title::before {
         @include line(5.1875rem, 1.25rem);
       }
-      .skills_box {
-        @include size(8rem, 100%);
-        @include box(10px, 3.5rem, $white_bg);
-        .skills_slider{
-          @include space-bet;
-          flex-direction: row;
-          div{
-            @include size(100%, 95px);
-            justify-content: center;
+      div {
+        @include size(auto, auto);
+        @include flex;
+        .skills_box {
+          @include size(8rem, 100%);
+          @include box(1.25rem, 3.5rem, $white_bg);
+          align-items: center;
+          div {
+            img {
+              height: 100%;
+            }
           }
         }
       }

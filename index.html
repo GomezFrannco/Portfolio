@@ -8,7 +8,6 @@
     <!-- favicon -->
     <link rel="icon" href="assets/img/favicon.ico" />
 
-
     <!-- general metatags -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,9 +19,10 @@
     <meta property="og:description" content="Sitio web de Franco Gomez como Backend Developer" />
 
     <!-- css -->
-    <link rel="stylesheet" href="assets/css/index.css" />
     <link rel="stylesheet" href="assets/css/normalize.css">
-    
+    <link rel="stylesheet" href="assets/css/index.css" />
+    <link rel="stylesheet" href="assets/css/slick.css">
+
     <!-- icons -->
     <link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
     
@@ -129,58 +129,62 @@
       <section class="skills" id="skills">
         <div>
           <h2 class="title top">Tech skills</h2>
-          <div class="skills_box lft">
-            <div class="skills_slider">
-              <div >
-                <img src="https://cdn4.iconfinder.com/data/icons/logos-3/456/nodejs-new-pantone-black-256.png" alt="Node.js">
-              </div>
+          <div>
+            <div class="skills_box skills_slider lft">
               <div >
                 <img src="https://img.icons8.com/color/344/typescript.png" alt="TypeScript">
               </div>
               <div >
-                <img src="https://img.icons8.com/color/344/mongodb.png" alt="MongoDB">
+                <img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/233_Node_Js_logo-256.png" alt="Node.js">
               </div>
-              <div class="slide">
-                <img src="https://img.icons8.com/color/344/javascript--v1.png" alt="JavaScript">
-              </div>
-              <div class="slide">
+              <div >
                 <img src="https://img.icons8.com/color/344/graphql.png" alt="GraphQL">
               </div>
-              <div class="slide">
+              <div >
+                <img src="https://img.icons8.com/color/344/javascript--v1.png" alt="JavaScript">
+              </div>
+              <div >
                 <img src="https://img.icons8.com/color/344/postgreesql.png" alt="PostgreSQL">
               </div>
-              <div class="slide">
+              <div >
+                <img src="https://img.icons8.com/color/344/mongodb.png" alt="MongoDB">
+              </div>
+              <div >
                 <img src="https://img.icons8.com/color/344/npm.png" alt="NPM">
               </div>
-              <div class="slide">
+              <div >
                 <img src="https://img.icons8.com/color/344/git.png" alt="GIT">
               </div>
               <div class="slide">
                 <img src="https://img.icons8.com/color/344/webpack.png" alt="Webpack">
               </div>
-              <div class="slide">
-                <img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/terminal-256.png" alt="Terminal">
-              </div>
-              <div class="slide">
-                <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/badge-html-5-512.png" alt="HTML5">
-              </div>
-              <div class="slide">
-                <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/badge-css-3-256.png" alt="CSS3">
-              </div>
-              <div class="slide">
+              <!-- <div >
                 <img src="https://img.icons8.com/color/344/sass.png" alt="Sass">
               </div>
+              <div >
+                <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/badge-html-5-512.png" alt="HTML5">
+              </div>
+              <div >
+                <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/badge-css-3-256.png" alt="CSS3">
+              </div> -->
+              <div >
+                <img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/terminal-256.png" alt="Terminal">
+              </div>
             </div>
-          </div>
         </div>
+          </div>
+
         <div>
           <h2 class="title top">Stack</h2>
-          <div class="skills_box lft">
-            <div></div>
-            <div></div>
-            <div></div>
+          <div>
+            <div class="skills_box lft">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
           </div>
-        </div>
+        </div>  
+
       </section>
 
     </main>
@@ -206,9 +210,14 @@
         </div> 
       </div>
     </footer>
+    <!--jQuery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!--slick CDN-->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <!-- scripts -->
     <script src="assets/js/dom.js" type="module"></script>
     <script src="assets/js/navbar.js" type="module"></script>
     <script src="assets/js/scrollreveal.js" type="module"></script>
+    <script src="assets/js/slick.js" type="module"></script>
   </body>
 </html>

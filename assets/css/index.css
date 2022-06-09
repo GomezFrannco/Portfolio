@@ -386,14 +386,6 @@ main .skills {
   justify-content: space-around;
   padding: 0 10.625rem;
 }
-main .skills div {
-  height: 12.9375rem;
-  width: auto;
-  display: flex;
-  flex-direction: column;
-  display: flex;
-  justify-content: space-between;
-}
 main .skills div .title {
   margin-bottom: 20px;
 }
@@ -405,23 +397,22 @@ main .skills div .title::before {
   background-color: #7050f0;
   content: "";
 }
-main .skills div .skills_box {
+main .skills div div {
+  height: auto;
+  width: auto;
+  display: flex;
+}
+main .skills div div .skills_box {
   height: 8rem;
   width: 100%;
-  padding: 10px 3.5rem;
+  padding: 1.25rem 3.5rem;
   border-radius: 1.8125rem;
   background-color: #ffff;
   box-shadow: 0 0 11px #00000040;
+  align-items: center;
 }
-main .skills div .skills_box .skills_slider {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-}
-main .skills div .skills_box .skills_slider div {
+main .skills div div .skills_box div img {
   height: 100%;
-  width: 95px;
-  justify-content: center;
 }
 
 /*

@@ -11,4 +11,6 @@ const $rigth = document.querySelectorAll(".rgth");
 const $top = document.querySelectorAll(".top");
 const $bttm = document.querySelectorAll(".bttm");
 
-export { $nav, $menu, $sections, $left, $rigth, $top, $bttm };
+const $slider = $(".skills_slider");
+
+export { $nav, $menu, $sections, $left, $rigth, $top, $bttm, $slider };
