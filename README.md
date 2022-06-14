@@ -2,7 +2,7 @@
 
 ![Main](assets/img/main_preview.png)
 
-This is my personal website as a Web Developer.
+This is my personal website as a Backend Developer.
 
 By: [Franco Gomez](https://github.com/GomezFrannco)
 
@@ -13,6 +13,5 @@ By: [Franco Gomez](https://github.com/GomezFrannco)
 * Sass
 * JavaScript
 * ScrollReveal.js
-<!-- * Owl.carousel.js -->
 
 > © 2022 Franco Gomez
