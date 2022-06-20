@@ -26,15 +26,9 @@ html {
 * button:hover {
   transform: scale(1.05);
 }
-* button:active {
-  transform: scale(0.65);
-}
 * .title {
   font-size: 48px;
   color: #3c3a5d;
-}
-* .line {
-  background-color: red;
 }
 
 /*
@@ -94,9 +88,17 @@ HEADER & NAV
   width: auto;
   padding: 0 1.5625rem;
   border-radius: 0.625rem;
+  border: 2px solid #7050f0;
   background-color: #7050f0;
   color: white;
   font-size: 0.8125rem;
+  transition: all 200ms ease-in-out, background-color 150ms, color 90ms;
+}
+.header .nav_bar .nav_btn a button:active {
+  color: #7050f0;
+  font-weight: 500;
+  border: 2px solid #7050f0;
+  background-color: transparent;
 }
 .header .nav_shadow_in {
   transition: all 300ms ease-in-out;
@@ -152,6 +154,13 @@ main .home .home_text div a #home_cv {
   background-color: #7050f0;
   border: 2px solid #7050f0;
   color: white;
+  transition: all 200ms ease-in-out, background-color 150ms, color 150ms;
+}
+main .home .home_text div a #home_cv:active {
+  color: #7050f0;
+  font-weight: 500;
+  border: 2px solid #7050f0;
+  background-color: transparent;
 }
 main .home .home_text div a #home_projects {
   padding: 1.25rem 1.5625rem;
@@ -159,7 +168,15 @@ main .home .home_text div a #home_projects {
   background-color: transparent;
   border: 2px solid #7050f0;
   color: #7050f0;
-  font-weight: 600;
+  font-weight: 500;
+  transition: all 200ms ease-in-out, background-color 150ms, color 150ms;
+}
+main .home .home_text div a #home_projects:active {
+  color: white;
+  font-weight: 500;
+  border: 2px solid white;
+  background-color: #7050f0;
+  border: 2px solid #7050f0;
 }
 main .home .home_logo {
   display: flex;
@@ -225,7 +242,7 @@ main .about .about_content p {
 }
 main .about .about_content a {
   height: 3.8994rem;
-  width: 7.7456rem;
+  width: 125.9296px;
 }
 main .about .about_content a button {
   padding: 1.25rem 1.5625rem;
@@ -233,6 +250,12 @@ main .about .about_content a button {
   background-color: #7050f0;
   border: 2px solid #7050f0;
   color: white;
+}
+main .about .about_content a button:active {
+  color: #7050f0;
+  font-weight: 500;
+  border: 2px solid #7050f0;
+  background-color: transparent;
 }
 main .about .about_image {
   padding: 0 0;
@@ -325,6 +348,12 @@ main .projects .project_button a button {
   background-color: #7050f0;
   border: 2px solid #7050f0;
   color: white;
+}
+main .projects .project_button a button:active {
+  color: #7050f0;
+  font-weight: 500;
+  border: 2px solid #7050f0;
+  background-color: transparent;
 }
 main .experience {
   padding-top: 48px;
@@ -535,6 +564,12 @@ footer .contact_form form button {
   color: white;
   font-size: 0.9375rem;
   width: 40%;
+}
+footer .contact_form form button:active {
+  color: #7050f0;
+  font-weight: 500;
+  border: 2px solid #7050f0;
+  background-color: transparent;
 }
 footer .contact_form form .contact_input:focus::placeholder {
   color: #7050f0;

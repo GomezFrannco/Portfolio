@@ -112,7 +112,12 @@ $gray_sec: #f1f1f3;
   background-color: $purple_prim;
   content: "";
 }
-
+@mixin buttonActive($clr, $bckgrnd) {
+  color: $clr;
+  font-weight: $M;
+  border: 2px solid $clr;
+  background-color: $bckgrnd;
+}
 /*
 ================================================================
 GENERAL
@@ -127,7 +132,6 @@ html {
   text-decoration: none;
   list-style: none;
   body {
-    // padding: $page_padd;
     padding-bottom: 0;
   }
   button {
@@ -139,15 +143,9 @@ html {
   button:hover {
     transform: scale(1.05);
   }
-  button:active {
-    transform: scale(0.65);
-  }
   .title {
     font-size: $tit;
     color: $black_tit;
-  }
-  .line {
-    background-color: red;
   }
 }
 
@@ -210,9 +208,14 @@ HEADER & NAV
           @include size(3rem, auto);
           padding: 0 1.5625rem;
           border-radius: 0.625rem;
+          border: 2px solid $purple_prim; 
           background-color: $purple_prim;
           color: $white_bg;
           font-size: 0.8125rem;
+          transition: all 200ms ease-in-out, background-color 150ms, color 90ms;
+        }
+        button:active {
+          @include buttonActive($purple_prim, transparent);
         }
       }
     }
@@ -257,10 +260,19 @@ main {
         width: 75%;
         a #home_cv {
           @include button($white_bg, $purple_prim, $purple_prim);
+          transition: all 200ms ease-in-out, background-color 150ms, color 150ms;
+        }
+        a #home_cv:active {
+          @include buttonActive($purple_prim, transparent);
         }
         a #home_projects {
           @include button($purple_prim, transparent, $purple_prim);
-          font-weight: $S;
+          font-weight: $M;
+          transition: all 200ms ease-in-out, background-color 150ms, color 150ms;
+        }
+        a #home_projects:active {
+          @include buttonActive($white_bg, $purple_prim);
+          border: 2px solid $purple_prim;
         }
       }
     }
@@ -306,7 +318,6 @@ main {
       @include size(24.9375rem, 29.6875rem);
       @include col;
       justify-content: space-evenly;
-      // @include space-bet;
       .title::before {
         @include line(5.1875rem, 1rem);
       }
@@ -314,9 +325,12 @@ main {
         @include paragraph;
       }
       a {
-        @include size(3.8994rem, 7.7456rem);
+        @include size(3.8994rem, 125.9296px);
         button {
           @include button($white_bg, $purple_prim, $purple_prim);
+        }
+        button:active {
+          @include buttonActive($purple_prim, transparent);
         }
       }
     }
@@ -381,6 +395,9 @@ main {
         align-items: center;
         button {
           @include button($white_bg, $purple_prim, $purple_prim);
+        }
+        button:active {
+          @include buttonActive($purple_prim, transparent);
         }
       }
     }
@@ -533,6 +550,9 @@ footer {
         @include button($white_bg, $purple_prim, $purple_prim);
         font-size: 0.9375rem;
         width: 40%;
+      }
+      button:active {
+        @include buttonActive($purple_prim, transparent);
       }
       .contact_input:focus::placeholder {
         color: $purple_prim;
