@@ -295,6 +295,11 @@ main .projects .projects_grid .projects_card {
   box-shadow: 0 0 11px rgba(0, 0, 0, 0.2509803922);
   height: 16.25rem;
   width: auto;
+  transition: all 220ms ease-in-out;
+}
+main .projects .projects_grid .projects_card:hover {
+  transform: scale(1.05);
+  cursor: pointer;
 }
 main .projects .project_button {
   display: flex;
@@ -367,6 +372,7 @@ main .experience .experience_box .experience_title .experience_icons .material-s
   font-size: 1.875rem;
   color: #838291;
   cursor: pointer;
+  transition: color 260ms ease-out;
 }
 main .experience .experience_box .experience_title .experience_icons .vertical {
   transform: rotate(90deg);
@@ -374,7 +380,16 @@ main .experience .experience_box .experience_title .experience_icons .vertical {
   cursor: default;
 }
 main .experience .experience_box .experience_title .experience_icons .active {
+  animation: colored 250ms ease-in;
   color: #7050f0;
+}
+@keyframes colored {
+  from {
+    color: #838291;
+  }
+  to {
+    color: #7050f0;
+  }
 }
 main .skills {
   padding-top: 48px;
