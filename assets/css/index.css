@@ -408,7 +408,7 @@ main .experience .experience_box .experience_title .experience_icons .vertical {
   color: #7050f0;
   cursor: default;
 }
-main .experience .experience_box .experience_title .experience_icons .active {
+main .experience .experience_box .experience_title .experience_icons .selected {
   animation: colored 250ms ease-in;
   color: #7050f0;
 }

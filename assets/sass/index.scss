@@ -442,7 +442,7 @@ main {
             color: $purple_prim;
             cursor: default;
           }
-          .active {
+          .selected {
             animation: colored 250ms ease-in;
             color: $purple_prim;
           }

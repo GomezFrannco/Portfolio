@@ -39,6 +39,7 @@ const scrollActive = function () {
     }
   });
 };
-if ( window.location.pathname === "/index.html" || window.location.pathname === "/" ) {
+
+if ( window.location.pathname === '/Portfolio/index.html' || window.location.pathname === '/Portfolio/' ) {
   window.addEventListener("scroll", scrollActive);
 }
