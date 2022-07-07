@@ -1,0 +1,92 @@
+@use 'variables';
+
+// --------------------------------------------------
+// MIXINS
+// --------------------------------------------------
+// FLEX
+@mixin flex {
+  display: flex;
+}
+@mixin space-bet {
+  @include flex;
+  justify-content: space-between;
+}
+@mixin row {
+  @include flex;
+  flex-direction: row;
+}
+@mixin col {
+  @include flex;
+  flex-direction: column;
+}
+// GRID
+@mixin grid {
+  display: grid;
+}
+@mixin grid-col($col_n, $col_px, $gap) {
+  grid-template-columns: repeat($col_n, $col_px);
+  column-gap: $gap;
+}
+@mixin grid-row($row_n, $row_px, $gap) {
+  grid-template-rows: repeat($row_n, $row_px);
+  row-gap: $gap;
+}
+// GENERAL
+@mixin size($h, $w) {
+  height: $h;
+  width: $w;
+}
+@mixin transition($time) {
+  transition: all $time ease-in-out;
+}
+@mixin window {
+  padding-top: 48px;
+  height: variables.$win_h;
+}
+// TEXT
+@mixin title {
+  font-size: variables.$tit;
+  font-weight: variables.$B;
+  color: variables.$black_tit;
+}
+@mixin paragraph {
+  font-size: variables.$par;
+  font-weight: variables.$M;
+  color: variables.$gray_prim;
+}
+// COMPONENTS
+@mixin button($col, $bg, $brdr) {
+  padding: variables.$btn_padd;
+  border-radius: 0.8125rem;
+  background-color: $bg;
+  border: 2px solid $brdr;
+  color: $col;
+}
+@mixin input() {
+  border-radius: 0.8125rem;
+  background-color: variables.$gray_sec;
+  color: variables.$gray_prim;
+  font-weight: variables.$S;
+  font-size: 0.75rem;
+  padding: 0 0.625rem;
+  border: none;
+}
+@mixin box($p_Y, $p_X, $col) {
+  padding: $p_Y $p_X;
+  border-radius: 1.8125rem;
+  background-color: $col;
+  box-shadow: 0 0 11px variables.$black_shdw;
+}
+@mixin line($width, $marginBot) {
+  @include size(0.3125rem, $width);
+  display: block;
+  margin-bottom: $marginBot;
+  background-color: variables.$purple_prim;
+  content: "";
+}
+@mixin buttonActive($clr, $bckgrnd) {
+  color: $clr;
+  font-weight: variables.$M;
+  border: 2px solid $clr;
+  background-color: $bckgrnd;
+}

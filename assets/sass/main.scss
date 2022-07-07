@@ -1,0 +1,460 @@
+@use 'variables';
+@use 'mixins';
+/*
+================================================================
+GENERAL
+================================================================
+*/
+html {
+  scroll-behavior: smooth;
+}
+* {
+  font-family: variables.$int;
+  font-size: variables.$par;
+  text-decoration: none;
+  list-style: none;
+  body {
+    padding-bottom: 0;
+  }
+  button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    @include mixins.transition(200ms);
+  }
+  button:hover {
+    transform: scale(1.05);
+  }
+  .title {
+    font-size: variables.$tit;
+    color: variables.$black_tit;
+  }
+}
+
+/*
+================================================================
+HEADER & NAV
+================================================================
+*/
+.header {
+  .nav_bar {
+    @include mixins.space-bet;
+    @include mixins.size(4.875rem, 100%);
+    left: 0;
+    align-items: center;
+    position: fixed;
+    z-index: 9999 !important;
+    padding: 0 10.625rem;
+    background-color: variables.$white_bg;
+    .nav_logo {
+      .logo_text {
+        @include mixins.size(3rem, 3rem);
+        font-weight: variables.$B;
+        color: variables.$black_tit;
+        span{
+          font-weight: variables.$B;
+          color: variables.$purple_prim;
+        }
+      }
+      .logo_icon {
+        display: none;
+      }
+    }
+    .nav_menu {
+      .active {
+        background: rgba(112, 80, 240, 0.08);
+        color: variables.$purple_prim !important;
+        border-radius: 7px;
+      }
+      .nav_list {
+        width: 20.75rem;
+        @include mixins.row;
+        @include mixins.space-bet;
+        li {
+          a {
+            @include mixins.transition(200ms);
+            padding: 14px 9px;
+            z-index: 999;
+            font-size: 14px;
+            font-weight: variables.$M;
+            color: variables.$gray_prim;
+          }
+          a:hover {
+            background: rgba(112, 80, 240, 0.08);
+            color: variables.$purple_prim;
+            border-radius: 7px;
+          }
+        }
+      }
+      .material-symbols-rounded {
+        display: none;
+      }
+    }
+    .nav_btn {
+      a {
+        button {
+          @include mixins.size(3rem, auto);
+          padding: 0 1.5625rem;
+          border-radius: 0.625rem;
+          border: 2px solid variables.$purple_prim; 
+          background-color: variables.$purple_prim;
+          color: variables.$white_bg;
+          font-size: 0.8125rem;
+          transition: all 200ms ease-in-out, background-color 150ms, color 90ms;
+        }
+        button:active {
+          @include mixins.buttonActive(variables.$purple_prim, transparent);
+        }
+      }
+    }
+  }
+  .nav_shadow_in {
+    @include mixins.transition(300ms);
+    box-shadow: 0 0 0.5rem variables.$black_shdw;
+  }
+  .nav_shadow_out {
+    @include mixins.transition(250ms);
+    box-shadow: none;
+  }
+}
+/*
+================================================================
+MAIN
+================================================================
+*/
+main {
+  .home {
+    @include mixins.window;
+    @include mixins.flex;
+    padding: variables.$page_padd;
+    align-items: center;
+    background-image: linear-gradient(0deg, variables.$purple_sec 10%, variables.$white_bg 80%);
+    .home_text {
+      @include mixins.size(auto, 28.4375rem);
+      .title {
+        font-size: variables.$tit;
+        color: variables.$black_tit;
+        margin: 0 0 1.9375rem 0;
+      }
+      .title::before {
+        @include mixins.line(5.1875rem, 2rem);
+      }
+      .title span {
+        color: variables.$purple_prim;
+        font-size: 3rem;
+      }
+      div {
+        @include mixins.space-bet;
+        width: 75%;
+        a #home_cv {
+          @include mixins.button(variables.$white_bg, variables.$purple_prim, variables.$purple_prim);
+          transition: all 200ms ease-in-out, background-color 150ms, color 150ms;
+        }
+        a #home_cv:active {
+          @include mixins.buttonActive(variables.$purple_prim, transparent);
+        }
+        a #home_projects {
+          @include mixins.button(variables.$purple_prim, transparent, variables.$purple_prim);
+          font-weight: variables.$M;
+          transition: all 200ms ease-in-out, background-color 150ms, color 150ms;
+        }
+        a #home_projects:active {
+          @include mixins.buttonActive(variables.$white_bg, variables.$purple_prim);
+          border: 2px solid variables.$purple_prim;
+        }
+      }
+    }
+    .home_logo{
+      @include mixins.flex;
+      @include mixins.size(100%, calc(100% - 28.4375rem));
+      justify-content: center;
+      align-items: center;
+      img{
+        @include mixins.size(17.5rem, 17.5rem);
+        animation: move 6s ease-in-out infinite;
+      }
+      @keyframes move {
+        0% {
+          transform: translateX(0);
+        }
+        50% {
+          transform: translateX(120px);
+        }
+        100% {
+          transform: translateX(0)
+        }
+      }
+    }
+    .home_wave {
+      @include mixins.size(9.375rem, 100%);
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      overflow: hidden;
+    }
+  }
+// ================================================================
+// ABOUT SECTION
+// ================================================================
+  .about {
+    @include mixins.window;
+    @include mixins.flex;
+    padding: variables.$page_padd;
+    align-items: center;
+    .about_content {
+      @include mixins.box(3.125rem, 2.5rem, variables.$white_bg);
+      @include mixins.size(24.9375rem, 29.6875rem);
+      @include mixins.col;
+      justify-content: space-evenly;
+      .title::before {
+        @include mixins.line(5.1875rem, 1rem);
+      }
+      p {
+        @include mixins.paragraph;
+      }
+      a {
+        @include mixins.size(3.8994rem, 125.9296px);
+        button {
+          @include mixins.button(variables.$white_bg, variables.$purple_prim, variables.$purple_prim);
+        }
+        button:active {
+          @include mixins.buttonActive(variables.$purple_prim, transparent);
+        }
+      }
+    }
+    .about_image {
+      @include mixins.box(0, 0, #c4c4c4);
+      @include mixins.size(33.5rem, 40.1875rem);
+      position: absolute;
+      right: 10.625rem;
+      z-index: -1;
+      background-image: url("/assets/img/yo.png");
+      background-repeat: no-repeat;
+      background-size: 40.1875rem;
+    }
+  }
+// ================================================================
+// PROJECTS SECTION
+// ================================================================
+  .projects {
+    @include mixins.window;
+    @include mixins.col;
+    @include mixins.flex;
+    padding: variables.$page_padd;
+    justify-content: space-evenly;
+    .projects_text {
+      @include mixins.space-bet;
+      align-items: flex-end;
+      .title::before {
+        @include mixins.line(5.1875rem, 1.25rem);
+      }
+      p {
+        @include mixins.size(4.5625rem, 24.75rem);
+        @include mixins.paragraph;
+      }
+      p span {
+        color: variables.$black_tit;
+        font-weight: variables.$B;
+      }
+    }
+    .projects_grid {
+      @include mixins.grid;
+      @include mixins.grid_col(3, auto, 2.5625rem);
+      @include mixins.grid_row(1, 16.25rem, 0);
+      .projects_card {
+        @include mixins.box(0.625rem, 1.1875rem, variables.$white_bg);
+        @include mixins.size(16.25rem, auto);
+        @include mixins.transition(220ms)
+      }
+      .projects_card:hover {
+        transform: scale(1.05);
+        cursor: pointer; 
+      }
+    }
+    .project_button {
+      @include mixins.space-bet;
+      z-index: 998 !important;
+      .title::after {
+        margin-top: 1.25rem;
+        @include mixins.line(25.1875rem, 0);
+      }
+      a {
+        @include mixins.flex;
+        align-items: center;
+        button {
+          @include mixins.button(variables.$white_bg, variables.$purple_prim, variables.$purple_prim);
+        }
+        button:active {
+          @include mixins.buttonActive(variables.$purple_prim, transparent);
+        }
+      }
+    }
+  }
+// ================================================================
+// EXPERIENCE SECTION
+// ================================================================
+  .experience {
+    @include mixins.window;
+    @include mixins.flex;
+    background-color: variables.$purple_sec;
+    padding: variables.$page_padd;
+    align-items: center;
+    .home_wave {
+      @include mixins.size(9.375rem, 100%);
+      z-index: 997 !important;
+      position: absolute;
+      left: 0;
+      top: 300vh;
+      overflow: hidden;
+    }
+    .experience_box {
+      @include mixins.box(2.5rem, 2.5rem, variables.$white_bg);
+      @include mixins.size(32.875rem, 100%);
+      margin-top: 6.25rem;
+      .experience_title{
+         @include mixins.space-bet;
+         align-items: flex-end;
+        .title::before{
+          @include mixins.line(5.1875rem, 1.25rem);
+        }
+        .experience_icons {
+          margin-bottom: 0.3125rem;
+          .material-symbols-rounded{
+            font-size: 1.875rem;
+            color: variables.$gray_prim;
+            cursor: pointer;
+            transition: color 260ms ease-out;
+          }
+          .vertical {
+            transform: rotate(90deg);
+            color: variables.$purple_prim;
+            cursor: default;
+          }
+          .selected {
+            animation: colored 250ms ease-in;
+            color: variables.$purple_prim;
+          }
+          @keyframes colored {
+            from {
+              color: variables.$gray_prim
+            }
+            to {
+              color: variables.$purple_prim; 
+            }
+          }
+        }
+      }
+    }
+  }
+// ================================================================
+// SKILLS SECTION
+// ================================================================
+  .skills {
+    @include mixins.window;
+    @include mixins.col;
+    @include mixins.flex;
+     background-image: linear-gradient(0deg, variables.$white_bg 85%, variables.$purple_sec 100%);
+    justify-content: space-around;
+    padding: variables.$page_padd;
+    div{
+      .title {
+        margin-bottom: 20px;
+      }
+      .title::before {
+        @include mixins.line(5.1875rem, 1.25rem);
+      }
+      div {
+        @include mixins.size(auto, auto);
+        @include mixins.flex;
+        .skills_box {
+          @include mixins.size(9.6875rem, 100%);
+          @include mixins.box(1.25rem, 3.5rem, variables.$white_bg);
+          align-items: center;
+          div {
+            img {
+              height: 80%;
+            }
+            p{
+              font-weight: variables.$B;
+              color: variables.$black_tit;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/*
+================================================================
+FOOTER & CONTACT SECTION
+================================================================
+*/
+footer {
+  @include mixins.window;
+  @include mixins.row;
+  @include mixins.space-bet;
+  padding: variables.$page_padd;
+  align-items: center;
+  .contact_text {
+    .title::before {
+      @include mixins.line(5.1875rem, 1.25rem);
+    }
+    p {
+      margin-top: 1.5rem;
+      line-height: 165%;
+      width: 19.5625rem;
+      @include mixins.paragraph;
+    }
+  }
+  .contact_form {
+    @include mixins.size(32.8125rem, auto);
+    @include mixins.box(2.1875rem, 2.375rem, variables.$white_bg);
+    @include mixins.col;
+    @include mixins.space-bet;
+    form {
+      @include mixins.size(23.3125rem, 30.3125rem);
+      @include mixins.col;
+      @include mixins.space-bet;
+      div {
+        @include mixins.row;
+        @include mixins.space-bet;
+        .contact_input {
+          @include mixins.size(3.4375rem, 14.375rem);
+          @include mixins.input;
+        }
+      }
+      .subject {
+        @include mixins.size(3.4375rem, 30.3125rem);
+        @include mixins.input;
+      }
+      .message {
+        @include mixins.size(8.125rem, 30.3125rem);
+        @include mixins.input;
+        padding-top: 1.3125rem;
+        resize: none;
+      }
+      button {
+        @include mixins.button(variables.$white_bg, variables.$purple_prim, variables.$purple_prim);
+        font-size: 0.9375rem;
+        width: 40%;
+      }
+      button:active {
+        @include mixins.buttonActive(variables.$purple_prim, transparent);
+      }
+      .contact_input:focus::placeholder {
+        color: variables.$purple_prim;
+      }
+      .contact_input:focus {
+        color: variables.$purple_prim;
+        outline: 2px solid variables.$purple_prim;
+        background-color: variables.$white_bg;
+      }
+    }
+    .contact_media {
+      @include mixins.size(5rem, auto);
+      @include mixins.flex;
+      align-items: center;
+    }
+  }
+}
