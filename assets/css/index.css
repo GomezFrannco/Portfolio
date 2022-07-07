@@ -48,15 +48,18 @@ HEADER & NAV
   padding: 0 10.625rem;
   background-color: white;
 }
-.header .nav_bar .nav_logo a {
+.header .nav_bar .nav_logo .logo_text {
   height: 3rem;
   width: 3rem;
   font-weight: 700;
   color: #3c3a5d;
 }
-.header .nav_bar .nav_logo a span {
+.header .nav_bar .nav_logo .logo_text span {
   font-weight: 700;
   color: #7050f0;
+}
+.header .nav_bar .nav_logo .logo_icon {
+  display: none;
 }
 .header .nav_bar .nav_menu .active {
   background: rgba(112, 80, 240, 0.08);
@@ -82,6 +85,9 @@ HEADER & NAV
   background: rgba(112, 80, 240, 0.08);
   color: #7050f0;
   border-radius: 7px;
+}
+.header .nav_bar .nav_menu .material-symbols-rounded {
+  display: none;
 }
 .header .nav_bar .nav_btn a button {
   height: 3rem;
@@ -585,5 +591,143 @@ footer .contact_form .contact_media {
   display: flex;
   align-items: center;
 }
+
+@media only screen and (max-width: 480px) {
+  /*
+  ================================================================
+  GENERAL
+  ================================================================
+  */
+  * {
+    padding: 0 !important;
+  }
+  * h2 {
+    font-size: 40px !important;
+  }
+  /*
+  ================================================================
+  HEADER & NAV
+  ================================================================
+  */
+  .header .nav_bar {
+    height: 4.5rem;
+    width: 100vw;
+    padding: 0 2.1875rem !important;
+  }
+  .header .nav_bar .nav_logo .logo_text {
+    display: none;
+  }
+  .header .nav_bar .nav_logo .logo_icon {
+    height: 2.5rem;
+    width: 2.5rem;
+    display: block;
+  }
+  .header .nav_bar .nav_menu .nav_list {
+    display: none;
+  }
+  .header .nav_bar .nav_menu .material-symbols-rounded {
+    font-size: 35px;
+    color: #3c3a5d;
+    display: block;
+  }
+  .header .nav_bar .nav_btn {
+    display: none;
+  }
+  /*
+  ================================================================
+  MAIN
+  ================================================================
+  */
+  main .home {
+    padding: 0 2.1875rem !important;
+  }
+  main .home .home_text {
+    z-index: 999;
+  }
+  main .home .home_text .title::before {
+    display: none;
+  }
+  main .home .home_text div {
+    width: 100%;
+  }
+  main .home .home_text div a #home_cv {
+    padding: 20px 19px !important;
+  }
+  main .home .home_text div a #home_projects {
+    padding: 20px 19px !important;
+  }
+  main .home .home_logo {
+    display: none;
+  }
+  main .about {
+    padding: 0 2.1875rem !important;
+  }
+  main .about .about_content {
+    width: 100%;
+    height: 400px;
+    border-radius: 20px;
+    padding: 25px 35px !important;
+  }
+  main .about .about_content .title {
+    font-size: 40px;
+  }
+  main .about .about_content a button {
+    padding: 20px 19px !important;
+  }
+  main .about .about_image {
+    display: none;
+  }
+  main .projects {
+    padding: 0 2.1875rem !important;
+    height: 200vh;
+  }
+  main .projects .projects_text p {
+    display: none;
+  }
+  main .projects .projects_grid {
+    display: flex;
+    flex-direction: column;
+    height: 150vh;
+    justify-content: space-between;
+  }
+  main .projects .project_button {
+    justify-content: center;
+  }
+  main .projects .project_button .title {
+    display: none;
+  }
+  main .projects .project_button a button {
+    padding: 20px 19px !important;
+  }
+  .experience {
+    padding: 0 2.1875rem !important;
+    height: 120vh !important;
+  }
+  .experience .home_wave {
+    top: 400vh !important;
+  }
+  .experience .experience_box {
+    padding: 25px 35px !important;
+  }
+  .skills {
+    padding: 0 2.1875rem !important;
+  }
+  /*
+  ================================================================
+  FOOTER & CONTACT SECTION
+  ================================================================
+  */
+  footer {
+    padding: 0 2.1875rem !important;
+  }
+  footer .contact_form {
+    display: none;
+  }
+}
+/*
+================================================================
+RESPONSIVE
+================================================================
+*/
 
 /*# sourceMappingURL=index.css.map */
