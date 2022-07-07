@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+// --------------------------------------------------
+// VARIABLES
+// --------------------------------------------------
+// FONT
+$int: "Inter", sans-serif;
+$tit: 48px;
+$par: 16px;
+$btn: $par;
+$L: 300;
+$R: 400;
+$M: 500;
+$S: 600;
+$B: 700;
+// SIZE
+$win_h: 100vh;
+$win_w: 100vw;
+// PADDING
+$page_padd: 0 10.625rem;
+$btn_padd: 1.25rem 1.5625rem;
+// COLORS
+$white_bg: #ffff;
+$black_tit: #3c3a5d;
+$black_shdw: #00000040;
+$purple_prim: #7050f0;
+$purple_sec: #F5F2FF;
+$gray_prim: #838291;
+$gray_sec: #f1f1f3;
