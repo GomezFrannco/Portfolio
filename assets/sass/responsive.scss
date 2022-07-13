@@ -54,6 +54,7 @@ MAIN
   main {
     .home {
       padding: 0 2.1875rem !important;
+      height: calc(variables.$win_h - 4.5rem);
       .home_text {
         z-index: 999;
         .title::before {
@@ -71,6 +72,9 @@ MAIN
       }
       .home_logo {
         display: none;
+      }
+      .home_wave {
+        bottom: 0 !important;
       }
     }
 // ================================================================

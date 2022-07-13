@@ -640,6 +640,7 @@ footer .contact_form .contact_media {
   */
   main .home {
     padding: 0 2.1875rem !important;
+    height: calc(100vh - 4.5rem);
   }
   main .home .home_text {
     z-index: 999;
@@ -658,6 +659,9 @@ footer .contact_form .contact_media {
   }
   main .home .home_logo {
     display: none;
+  }
+  main .home .home_wave {
+    bottom: 0 !important;
   }
   main .about {
     padding: 0 2.1875rem !important;
