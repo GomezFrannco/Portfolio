@@ -70,15 +70,17 @@
     <main>
 
       <section class="home">
-        <div class="home_text">
-          <h1 class="title">Hola,<br>soy Franco.<br><span>Backend developer</span></h1>
-          <div>
-            <a href="./assets/img/CV.pdf" target="_BLANK"><button id="home_cv">Descargar CV</button></a>
-            <a href="#projects"><button id="home_projects">Ver proyectos</button></a>
+        <div class="home_content">
+          <div class="home_text">
+            <h1 class="title">Hola,<br>soy Franco.<br><span>Backend developer</span></h1>
+            <div>
+              <a href="./assets/img/CV.pdf" target="_BLANK"><button id="home_cv">Descargar CV</button></a>
+              <a href="#projects"><button id="home_projects">Ver proyectos</button></a>
+            </div>
           </div>
-        </div>
-        <div class="home_logo">
-          <img src="./assets/img/logo.png" alt="Franco Gomez logo">
+          <div class="home_logo">
+            <img src="./assets/img/logo.png" alt="Franco Gomez logo">
+          </div>
         </div>
         <div class="home_wave">
           <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
@@ -89,28 +91,38 @@
       
       
       <section class="about" id="about">
-        <div class="about_content bttm">
-          <h2 class="title">Sobre mí</h2>
-          <p>Soy Desarrollador Backend Junior y mi objetivo es mejorar mis habilidades como programador adquiriendo conocimiento y realizando proyectos.</p>
-          <a href=""><button>Leer más</button></a>
-        </div>
-        <div class="about_image">
+        <div class="about_content">
+          <div class="about_text bttm">
+            <h2 class="title">Sobre mí</h2>
+            <p>Soy Desarrollador Backend Junior y mi objetivo es mejorar mis habilidades como programador adquiriendo conocimiento y realizando proyectos.</p>
+            <a href=""><button>Leer más</button></a>
+          </div>
+          <div class="about_image">
+          </div>
         </div>
       </section>
 
       <section class="projects" id="projects">
-        <div class="projects_text bttm">
-          <h2 class="title">Proyectos recientes</h2>
-          <p>Como <span>Backend Dev</span>, estuve trabajando en algunos proyectos. Estos tres son los más <span>destacados</span> hasta el momento.</p>
-        </div>
-        <div class="projects_grid">
-          <div class="projects_card first bttm"></div>
-          <div class="projects_card second bttm"></div>
-          <div class="projects_card third bttm"></div>
-        </div>
-        <div class="project_button top">
-          <h2 class="title">Todos los proyectos</h2>
-          <a href=""> <button>Más proyectos</button></a>
+        <div class="projects_content">
+          <div class="projects_text bttm">
+            <h2 class="title">Proyectos recientes</h2>
+            <p>Como <span>Backend Dev</span>, estuve trabajando en algunos proyectos. Estos tres son los más <span>destacados</span> hasta el momento.</p>
+          </div>
+          <div class="projects_grid">
+            <div class="projects_card first bttm">
+              <img src="" alt="">
+            </div>
+            <div class="projects_card second bttm">
+              <img src="" alt="">
+            </div>
+            <div class="projects_card third bttm">
+              <img src="" alt="">
+            </div>
+          </div>
+          <div class="project_button top">
+            <h2 class="title">Todos los proyectos</h2>
+            <a href=""> <button>Más proyectos</button></a>
+          </div>
         </div>
       </section>
 
@@ -139,7 +151,7 @@
       </section>
 
       <section class="skills" id="skills">
-        <div>
+        <div class="skills_content">
           <h2 class="title top">Tech skills</h2>
           <div>
             <div class="skills_box skills_slider lft">
@@ -195,41 +207,33 @@
             </div>
         </div>
           </div>
-
-        <div>
-          <h2 class="title top">Stack</h2>
-          <div>
-            <div class="skills_box lft">
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-          </div>
-        </div>  
-
       </section>
 
     </main>
 
     <footer class="contact footer" id="contact">
+      <div class="contact_content">
 
-      <div class="contact_text">
-        <h2 class="title">Contacto</h2>
-        <p>Si crees que podríamos trabajar juntos en algún proyecto, te invito a dejarme un mensaje. Tu propuesta o comentario será bienvenido!</p>
-      </div>
-      <div class="contact_form rgth">
-        <form action="" method="">
-          <div>
-            <input type="text" name="name" placeholder="nombre" class="contact_input" required>
-            <input type="email" name="email" placeholder="email" class="contact_input" required>
-          </div>
-          <input type="text" name="subject" placeholder="asunto" class="contact_input subject">
-          <textarea name="message" placeholder="mensaje" maxlength="300" class="contact_input message"></textarea>
-          <button>Enviar mensaje</button>
-        </form>
-        <div class="contact_media">
-          <h3>También puedes contactarme en:</h3>
-        </div> 
+        <div class="contact_text">
+          <h2 class="title">Contacto</h2>
+          <p>Si crees que podríamos trabajar juntos en algún proyecto, te invito a dejarme un mensaje. Tu propuesta o comentario será bienvenido!</p>
+        </div>
+
+
+        <div class="contact_form rgth">
+          <form action="" method="">
+            <div>
+              <input type="text" name="name" placeholder="nombre" class="contact_input" required>
+              <input type="email" name="email" placeholder="email" class="contact_input" required>
+            </div>
+            <input type="text" name="subject" placeholder="asunto" class="contact_input subject">
+            <textarea name="message" placeholder="mensaje" maxlength="300" class="contact_input message"></textarea>
+            <button>Enviar mensaje</button>
+          </form>
+          <div class="contact_media">
+            <h3>También puedes contactarme en:</h3>
+          </div> 
+        </div>
       </div>
     </footer>
     <!--jQuery-->
