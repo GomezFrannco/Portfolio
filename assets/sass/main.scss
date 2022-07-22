@@ -124,7 +124,7 @@ MAIN
 */
 main {
   .home {
-    @include mixins.window;
+    @include mixins.window(3rem);
     @include mixins.flex;
     padding: variables.$page_padd;
     align-items: center;
@@ -197,7 +197,7 @@ main {
 // ABOUT SECTION
 // ================================================================
   .about {
-    @include mixins.window;
+    @include mixins.window(3rem);
     @include mixins.flex;
     padding: variables.$page_padd;
     align-items: center;
@@ -237,7 +237,7 @@ main {
 // PROJECTS SECTION
 // ================================================================
   .projects {
-    @include mixins.window;
+    @include mixins.window(3rem);
     @include mixins.col;
     @include mixins.flex;
     padding: variables.$page_padd;
@@ -294,7 +294,7 @@ main {
 // EXPERIENCE SECTION
 // ================================================================
   .experience {
-    @include mixins.window;
+    @include mixins.window(3rem);
     @include mixins.flex;
     background-color: variables.$purple_sec;
     padding: variables.$page_padd;
@@ -304,7 +304,7 @@ main {
       z-index: 997 !important;
       position: absolute;
       left: 0;
-      top: 300vh;
+      top: 400vh;
       overflow: hidden;
     }
     .experience_box {
@@ -350,7 +350,7 @@ main {
 // SKILLS SECTION
 // ================================================================
   .skills {
-    @include mixins.window;
+    @include mixins.window(3rem);
     @include mixins.col;
     @include mixins.flex;
      background-image: linear-gradient(0deg, variables.$white_bg 85%, variables.$purple_sec 100%);
@@ -391,7 +391,7 @@ FOOTER & CONTACT SECTION
 ================================================================
 */
 footer {
-  @include mixins.window;
+  @include mixins.window(3rem);
   @include mixins.row;
   @include mixins.space-bet;
   padding: variables.$page_padd;
