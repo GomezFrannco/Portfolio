@@ -375,7 +375,7 @@ main .experience .home_wave {
   z-index: 997 !important;
   position: absolute;
   left: 0;
-  top: 400vh;
+  top: 300vh;
   overflow: hidden;
 }
 main .experience .experience_box {
@@ -592,7 +592,7 @@ footer .contact_form .contact_media {
   align-items: center;
 }
 
-@media only screen and (max-width: 480px) {
+@media all and (max-width: 480px) {
   /*
   ================================================================
   GENERAL
@@ -704,8 +704,20 @@ footer .contact_form .contact_media {
     padding: 0 2.1875rem !important;
     height: 120vh !important;
   }
+  .experience .home_wave {
+    top: 400vh !important;
+  }
   .experience .experience_box {
     padding: 25px 35px !important;
+  }
+  .experience .experience_box .experience_title {
+    justify-content: center !important;
+  }
+  .experience .experience_box .experience_title .title::before {
+    width: 100% !important;
+  }
+  .experience .experience_box .experience_icons {
+    display: none;
   }
   .skills {
     padding: 0 2.1875rem !important;
