@@ -6,6 +6,7 @@ GENERAL
 */
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 * {
@@ -121,23 +122,29 @@ MAIN
 ================================================================
 */
 main .home {
-  padding-top: 3rem;
   height: 100vh;
+  width: 100vw;
   display: flex;
-  padding: 0 10.625rem;
   align-items: center;
   background-image: linear-gradient(0deg, #F5F2FF 10%, white 80%);
 }
-main .home .home_text {
+main .home .home_content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 10.625rem;
+  align-items: center;
+}
+main .home .home_content .home_text {
   height: auto;
   width: 28.4375rem;
 }
-main .home .home_text .title {
+main .home .home_content .home_text .title {
   font-size: 48px;
   color: #3c3a5d;
   margin: 0 0 1.9375rem 0;
 }
-main .home .home_text .title::before {
+main .home .home_content .home_text .title::before {
   height: 0.3125rem;
   width: 5.1875rem;
   display: block;
@@ -145,16 +152,16 @@ main .home .home_text .title::before {
   background-color: #7050f0;
   content: "";
 }
-main .home .home_text .title span {
+main .home .home_content .home_text .title span {
   color: #7050f0;
   font-size: 3rem;
 }
-main .home .home_text div {
+main .home .home_content .home_text div {
   display: flex;
   justify-content: space-between;
   width: 75%;
 }
-main .home .home_text div a #home_cv {
+main .home .home_content .home_text div a #home_cv {
   padding: 1.25rem 1.5625rem;
   border-radius: 0.8125rem;
   background-color: #7050f0;
@@ -162,13 +169,13 @@ main .home .home_text div a #home_cv {
   color: white;
   transition: all 200ms ease-in-out, background-color 150ms, color 150ms;
 }
-main .home .home_text div a #home_cv:active {
+main .home .home_content .home_text div a #home_cv:active {
   color: #7050f0;
   font-weight: 500;
   border: 2px solid #7050f0;
   background-color: transparent;
 }
-main .home .home_text div a #home_projects {
+main .home .home_content .home_text div a #home_projects {
   padding: 1.25rem 1.5625rem;
   border-radius: 0.8125rem;
   background-color: transparent;
@@ -177,21 +184,21 @@ main .home .home_text div a #home_projects {
   font-weight: 500;
   transition: all 200ms ease-in-out, background-color 150ms, color 150ms;
 }
-main .home .home_text div a #home_projects:active {
+main .home .home_content .home_text div a #home_projects:active {
   color: white;
   font-weight: 500;
   border: 2px solid white;
   background-color: #7050f0;
   border: 2px solid #7050f0;
 }
-main .home .home_logo {
-  display: flex;
-  height: 100%;
-  width: calc(100% - 28.4375rem);
+main .home .home_content .home_logo {
+  height: 17.5rem;
+  width: 17.5rem;
+  margin-right: 120px;
   justify-content: center;
   align-items: center;
 }
-main .home .home_logo img {
+main .home .home_content .home_logo img {
   height: 17.5rem;
   width: 17.5rem;
   animation: move 6s ease-in-out infinite;
@@ -208,7 +215,7 @@ main .home .home_logo img {
   }
 }
 main .home .home_wave {
-  height: 9.375rem;
+  height: 150px;
   width: 100%;
   position: absolute;
   left: 0;
@@ -216,13 +223,17 @@ main .home .home_wave {
   overflow: hidden;
 }
 main .about {
-  padding-top: 3rem;
   height: 100vh;
+  width: 100vw;
   display: flex;
-  padding: 0 10.625rem;
   align-items: center;
 }
 main .about .about_content {
+  position: relative;
+  width: 100%;
+  margin: 0 10.625rem;
+}
+main .about .about_content .about_text {
   padding: 3.125rem 2.5rem;
   border-radius: 1.8125rem;
   background-color: white;
@@ -233,7 +244,7 @@ main .about .about_content {
   flex-direction: column;
   justify-content: space-evenly;
 }
-main .about .about_content .title::before {
+main .about .about_content .about_text .title::before {
   height: 0.3125rem;
   width: 5.1875rem;
   display: block;
@@ -241,57 +252,62 @@ main .about .about_content .title::before {
   background-color: #7050f0;
   content: "";
 }
-main .about .about_content p {
+main .about .about_content .about_text p {
   font-size: 16px;
   font-weight: 500;
   color: #838291;
 }
-main .about .about_content a {
+main .about .about_content .about_text a {
   height: 3.8994rem;
   width: 125.9296px;
 }
-main .about .about_content a button {
+main .about .about_content .about_text a button {
   padding: 1.25rem 1.5625rem;
   border-radius: 0.8125rem;
   background-color: #7050f0;
   border: 2px solid #7050f0;
   color: white;
 }
-main .about .about_content a button:active {
+main .about .about_content .about_text a button:active {
   color: #7050f0;
   font-weight: 500;
   border: 2px solid #7050f0;
   background-color: transparent;
 }
-main .about .about_image {
+main .about .about_content .about_image {
   padding: 0 0;
   border-radius: 1.8125rem;
   background-color: #c4c4c4;
   box-shadow: 0 0 11px rgba(0, 0, 0, 0.2509803922);
-  height: 33.5rem;
+  height: 536px;
   width: 40.1875rem;
   position: absolute;
-  right: 10.625rem;
+  bottom: -4.2813rem;
+  right: 0;
   z-index: -1;
   background-image: url("/assets/img/yo.png");
   background-repeat: no-repeat;
   background-size: 40.1875rem;
 }
 main .projects {
-  padding-top: 3rem;
   height: 100vh;
+  width: 100vw;
+  display: flex;
+}
+main .projects .projects_content {
+  margin: 0 10.625rem;
+  width: 100%;
   display: flex;
   flex-direction: column;
   display: flex;
-  padding: 0 10.625rem;
   justify-content: space-evenly;
 }
-main .projects .projects_text {
+main .projects .projects_content .projects_text {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
 }
-main .projects .projects_text .title::before {
+main .projects .projects_content .projects_text .title::before {
   height: 0.3125rem;
   width: 5.1875rem;
   display: block;
@@ -299,25 +315,25 @@ main .projects .projects_text .title::before {
   background-color: #7050f0;
   content: "";
 }
-main .projects .projects_text p {
+main .projects .projects_content .projects_text p {
   height: 4.5625rem;
   width: 24.75rem;
   font-size: 16px;
   font-weight: 500;
   color: #838291;
 }
-main .projects .projects_text p span {
+main .projects .projects_content .projects_text p span {
   color: #3c3a5d;
   font-weight: 700;
 }
-main .projects .projects_grid {
+main .projects .projects_content .projects_grid {
   display: grid;
   grid-template-columns: repeat(3, auto);
   column-gap: 2.5625rem;
   grid-template-rows: repeat(1, 16.25rem);
   row-gap: 0;
 }
-main .projects .projects_grid .projects_card {
+main .projects .projects_content .projects_grid .projects_card {
   padding: 0.625rem 1.1875rem;
   border-radius: 1.8125rem;
   background-color: white;
@@ -326,16 +342,16 @@ main .projects .projects_grid .projects_card {
   width: auto;
   transition: all 220ms ease-in-out;
 }
-main .projects .projects_grid .projects_card:hover {
+main .projects .projects_content .projects_grid .projects_card:hover {
   transform: scale(1.05);
   cursor: pointer;
 }
-main .projects .project_button {
+main .projects .projects_content .project_button {
   display: flex;
   justify-content: space-between;
   z-index: 998 !important;
 }
-main .projects .project_button .title::after {
+main .projects .projects_content .project_button .title::after {
   margin-top: 1.25rem;
   height: 0.3125rem;
   width: 25.1875rem;
@@ -344,29 +360,28 @@ main .projects .project_button .title::after {
   background-color: #7050f0;
   content: "";
 }
-main .projects .project_button a {
+main .projects .projects_content .project_button a {
   display: flex;
   align-items: center;
 }
-main .projects .project_button a button {
+main .projects .projects_content .project_button a button {
   padding: 1.25rem 1.5625rem;
   border-radius: 0.8125rem;
   background-color: #7050f0;
   border: 2px solid #7050f0;
   color: white;
 }
-main .projects .project_button a button:active {
+main .projects .projects_content .project_button a button:active {
   color: #7050f0;
   font-weight: 500;
   border: 2px solid #7050f0;
   background-color: transparent;
 }
 main .experience {
-  padding-top: 3rem;
   height: 100vh;
+  width: 100vw;
   display: flex;
   background-color: #F5F2FF;
-  padding: 0 10.625rem;
   align-items: center;
 }
 main .experience .home_wave {
@@ -385,7 +400,7 @@ main .experience .experience_box {
   box-shadow: 0 0 11px rgba(0, 0, 0, 0.2509803922);
   height: 32.875rem;
   width: 100%;
-  margin-top: 6.25rem;
+  margin: 6.25rem 10.625rem 0 10.625rem;
 }
 main .experience .experience_box .experience_title {
   display: flex;
@@ -427,14 +442,15 @@ main .experience .experience_box .experience_title .experience_icons .selected {
   }
 }
 main .skills {
-  padding-top: 3rem;
-  height: 100vh;
+  height: 50vh;
   display: flex;
   flex-direction: column;
   display: flex;
   background-image: linear-gradient(0deg, white 85%, #F5F2FF 100%);
   justify-content: space-around;
-  padding: 0 10.625rem;
+}
+main .skills .skills_content {
+  margin: 0 10.625rem;
 }
 main .skills div .title {
   margin-bottom: 20px;
@@ -476,16 +492,21 @@ FOOTER & CONTACT SECTION
 ================================================================
 */
 footer {
-  padding-top: 3rem;
   height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+}
+footer .contact_content {
   display: flex;
   flex-direction: row;
   display: flex;
   justify-content: space-between;
-  padding: 0 10.625rem;
+  width: 100%;
   align-items: center;
+  margin: 0 10.625rem;
 }
-footer .contact_text .title::before {
+footer .contact_content .contact_text .title::before {
   height: 0.3125rem;
   width: 5.1875rem;
   display: block;
@@ -493,7 +514,7 @@ footer .contact_text .title::before {
   background-color: #7050f0;
   content: "";
 }
-footer .contact_text p {
+footer .contact_content .contact_text p {
   margin-top: 1.5rem;
   line-height: 165%;
   width: 19.5625rem;
@@ -501,7 +522,7 @@ footer .contact_text p {
   font-weight: 500;
   color: #838291;
 }
-footer .contact_form {
+footer .contact_content .contact_form {
   height: 32.8125rem;
   width: auto;
   padding: 2.1875rem 2.375rem;
@@ -513,7 +534,7 @@ footer .contact_form {
   display: flex;
   justify-content: space-between;
 }
-footer .contact_form form {
+footer .contact_content .contact_form form {
   height: 23.3125rem;
   width: 30.3125rem;
   display: flex;
@@ -521,13 +542,13 @@ footer .contact_form form {
   display: flex;
   justify-content: space-between;
 }
-footer .contact_form form div {
+footer .contact_content .contact_form form div {
   display: flex;
   flex-direction: row;
   display: flex;
   justify-content: space-between;
 }
-footer .contact_form form div .contact_input {
+footer .contact_content .contact_form form div .contact_input {
   height: 3.4375rem;
   width: 14.375rem;
   border-radius: 0.8125rem;
@@ -538,7 +559,7 @@ footer .contact_form form div .contact_input {
   padding: 0 0.625rem;
   border: none;
 }
-footer .contact_form form .subject {
+footer .contact_content .contact_form form .subject {
   height: 3.4375rem;
   width: 30.3125rem;
   border-radius: 0.8125rem;
@@ -549,7 +570,7 @@ footer .contact_form form .subject {
   padding: 0 0.625rem;
   border: none;
 }
-footer .contact_form form .message {
+footer .contact_content .contact_form form .message {
   height: 8.125rem;
   width: 30.3125rem;
   border-radius: 0.8125rem;
@@ -562,7 +583,7 @@ footer .contact_form form .message {
   padding-top: 1.3125rem;
   resize: none;
 }
-footer .contact_form form button {
+footer .contact_content .contact_form form button {
   padding: 1.25rem 1.5625rem;
   border-radius: 0.8125rem;
   background-color: #7050f0;
@@ -571,21 +592,21 @@ footer .contact_form form button {
   font-size: 0.9375rem;
   width: 40%;
 }
-footer .contact_form form button:active {
+footer .contact_content .contact_form form button:active {
   color: #7050f0;
   font-weight: 500;
   border: 2px solid #7050f0;
   background-color: transparent;
 }
-footer .contact_form form .contact_input:focus::placeholder {
+footer .contact_content .contact_form form .contact_input:focus::placeholder {
   color: #7050f0;
 }
-footer .contact_form form .contact_input:focus {
+footer .contact_content .contact_form form .contact_input:focus {
   color: #7050f0;
   outline: 2px solid #7050f0;
   background-color: white;
 }
-footer .contact_form .contact_media {
+footer .contact_content .contact_form .contact_media {
   height: 5rem;
   width: auto;
   display: flex;
