@@ -121,7 +121,7 @@ MAIN
 ================================================================
 */
 main .home {
-  padding-top: 48px;
+  padding-top: 3rem;
   height: 100vh;
   display: flex;
   padding: 0 10.625rem;
@@ -216,7 +216,7 @@ main .home .home_wave {
   overflow: hidden;
 }
 main .about {
-  padding-top: 48px;
+  padding-top: 3rem;
   height: 100vh;
   display: flex;
   padding: 0 10.625rem;
@@ -278,7 +278,7 @@ main .about .about_image {
   background-size: 40.1875rem;
 }
 main .projects {
-  padding-top: 48px;
+  padding-top: 3rem;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -362,7 +362,7 @@ main .projects .project_button a button:active {
   background-color: transparent;
 }
 main .experience {
-  padding-top: 48px;
+  padding-top: 3rem;
   height: 100vh;
   display: flex;
   background-color: #F5F2FF;
@@ -375,7 +375,7 @@ main .experience .home_wave {
   z-index: 997 !important;
   position: absolute;
   left: 0;
-  top: 300vh;
+  top: 400vh;
   overflow: hidden;
 }
 main .experience .experience_box {
@@ -427,7 +427,7 @@ main .experience .experience_box .experience_title .experience_icons .selected {
   }
 }
 main .skills {
-  padding-top: 48px;
+  padding-top: 3rem;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -476,7 +476,7 @@ FOOTER & CONTACT SECTION
 ================================================================
 */
 footer {
-  padding-top: 48px;
+  padding-top: 3rem;
   height: 100vh;
   display: flex;
   flex-direction: row;
@@ -640,7 +640,7 @@ footer .contact_form .contact_media {
   */
   main .home {
     padding: 0 2.1875rem !important;
-    height: calc(100vh - 4.5rem);
+    height: 100vh;
   }
   main .home .home_text {
     z-index: 999;
@@ -659,9 +659,6 @@ footer .contact_form .contact_media {
   }
   main .home .home_logo {
     display: none;
-  }
-  main .home .home_wave {
-    bottom: 0 !important;
   }
   main .about {
     padding: 0 2.1875rem !important;
@@ -689,9 +686,9 @@ footer .contact_form .contact_media {
     display: none;
   }
   main .projects .projects_grid {
+    height: 53.4375rem;
     display: flex;
     flex-direction: column;
-    height: 150vh;
     justify-content: space-between;
   }
   main .projects .project_button {
@@ -706,9 +703,6 @@ footer .contact_form .contact_media {
   .experience {
     padding: 0 2.1875rem !important;
     height: 120vh !important;
-  }
-  .experience .home_wave {
-    top: 400vh !important;
   }
   .experience .experience_box {
     padding: 25px 35px !important;

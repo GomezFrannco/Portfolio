@@ -39,8 +39,8 @@
 @mixin transition($time) {
   transition: all $time ease-in-out;
 }
-@mixin window {
-  padding-top: 48px;
+@mixin window($padd) {
+  padding-top: $padd;
   height: variables.$win_h;
 }
 // TEXT
