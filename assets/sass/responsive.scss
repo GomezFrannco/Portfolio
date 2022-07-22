@@ -1,7 +1,7 @@
 @use "variables";
 @use "mixins";
 
-@media only screen and (max-width: 480px) {
+@media all and (max-width: 480px) {
 /*
 ================================================================
 GENERAL
@@ -135,6 +135,15 @@ MAIN
     height: 120vh !important;
     .experience_box {
       padding: 25px 35px !important;
+      .experience_title {
+        justify-content: center !important;
+        .title::before {
+          width: 100% !important;
+        }
+      }
+      .experience_icons {
+        display: none;
+      }
     }
   }
 // ================================================================
