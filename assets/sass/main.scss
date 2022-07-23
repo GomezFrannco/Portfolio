@@ -127,7 +127,7 @@ main {
   .home {
     @include mixins.window;
     @include mixins.flex;
-    // flex-direction: column;
+    position: relative;
     align-items: center;
     background-image: linear-gradient(0deg, variables.$purple_sec 10%, variables.$white_bg 80%);
     .home_content{
@@ -313,6 +313,7 @@ main {
   .experience {
     @include mixins.window;
     @include mixins.flex;
+    position: relative;
     background-color: variables.$purple_sec;
     align-items: center;
     .home_wave {
@@ -320,7 +321,7 @@ main {
       z-index: 997 !important;
       position: absolute;
       left: 0;
-      top: 300vh;
+      top: 0;
       overflow: hidden;
     }
     .experience_box {

@@ -125,6 +125,7 @@ main .home {
   height: 100vh;
   width: 100vw;
   display: flex;
+  position: relative;
   align-items: center;
   background-image: linear-gradient(0deg, #F5F2FF 10%, white 80%);
 }
@@ -381,6 +382,7 @@ main .experience {
   height: 100vh;
   width: 100vw;
   display: flex;
+  position: relative;
   background-color: #F5F2FF;
   align-items: center;
 }
@@ -390,7 +392,7 @@ main .experience .home_wave {
   z-index: 997 !important;
   position: absolute;
   left: 0;
-  top: 300vh;
+  top: 0;
   overflow: hidden;
 }
 main .experience .experience_box {
