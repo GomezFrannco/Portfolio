@@ -367,11 +367,10 @@ main {
 // SKILLS SECTION
 // ================================================================
   .skills {
-    // @include mixins.window;
     height: 50vh;
     @include mixins.col;
     @include mixins.flex;
-     background-image: linear-gradient(0deg, variables.$white_bg 85%, variables.$purple_sec 100%);
+    background-image: linear-gradient(0deg, variables.$white_bg 85%, variables.$purple_sec 100%);
     justify-content: space-around;
     .skills_content {
       margin: 0 10.625rem;

@@ -36,7 +36,7 @@ HEADER & NAV
           display: none;
         }
         .material-symbols-rounded {
-          font-size: 35px;
+          font-size: 2.1875rem;
           color: variables.$black_tit;
           display: block;
         }
@@ -53,75 +53,92 @@ MAIN
 */
   main {
     .home {
-      padding: 0 2.1875rem !important;
-      height: 100vh;
-      .home_text {
+      .home_content {
         z-index: 999;
-        .title::before {
+        margin: 0 2.1875rem;
+        .home_text {
+          width: 100%;
+          .title {
+            font-size: 2.5rem;
+            span {
+            font-size: 2.5rem;
+            }
+          }
+          .title::before {
+            display: none;
+          }
+          div {
+            width: 100%;
+            a #home_cv {
+              padding: 1.25rem 1.1875rem !important;
+            }
+            a #home_projects {
+              padding: 1.25rem 1.1875rem !important;
+            }
+          }
+        }
+        .home_logo {
           display: none;
         }
-        div {
-          width: 100%;
-          a #home_cv {
-            padding: 20px 19px !important;
-          }
-          a #home_projects {
-            padding: 20px 19px !important;
-          }
-        }
       }
-      .home_logo {
-        display: none;
-      }
+
+
+
+
     }
 // ================================================================
 // ABOUT SECTION
 // ================================================================
     .about {
-      padding: 0 2.1875rem !important;
       .about_content {
-        width: 100%;
-        height: 400px;
-        border-radius: 20px;
-        padding: 25px 35px !important;
-        .title {
-          font-size: 40px;
-        }
-        a {
-          button {
-            padding: 20px 19px !important;
+        margin: 0 2.1875rem; 
+        .about_text {
+          margin: 0;
+          width: 100%;
+          height: 25rem;
+          border-radius: 1.25rem;
+          padding: 1.5625rem 2.1875rem !important;
+          .title {
+            font-size: 2.5rem;
+          }
+          a {
+            button {
+              padding: 1.25rem 1.1875rem !important;
+            }
           }
         }
-      }
-      .about_image {
-        display: none;
+        .about_image {
+          display: none;
+        }
       }
     }
 // ================================================================
 // PROJECTS SECTION
 // ================================================================
     .projects {
-      padding: 0 2.1875rem !important;
       height: 200vh;
-      .projects_text {
-        p {
-          display: none;
+      .projects_content {
+        margin: 0 2.1875rem;
+        .projects_text {
+          p {
+            display: none;
+          }
         }
-      }
-      .projects_grid {
-        height: calc(16.25rem * 3) + calc(1.5625rem * 3);
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-      }
-      .project_button {
-        justify-content: center;
-        .title {
-          display: none;
+        .projects_grid {
+          height: calc(16.25rem * 3) + calc(1.5625rem * 3);
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
         }
-        a {
-          button {
-            padding: 20px 19px !important;
+        .project_button {
+          justify-content: center;
+          .title {
+            display: none;
+          }
+          a {
+            button {
+              padding: 1.25rem 1.1875rem !important;
+            }
           }
         }
       }
@@ -131,13 +148,11 @@ MAIN
 // EXPERIENCE SECTION
 // ================================================================
   .experience {
-    padding: 0 2.1875rem !important;
+    // padding: 0 2.1875rem !important;
     height: 120vh !important;
-    .home_wave {
-      top: 400vh !important;
-    }
     .experience_box {
-      padding: 25px 35px !important;
+      margin: 2.1875rem 2.1875rem 0 2.1875rem !important;
+      padding: 1.5625rem 2.1875rem !important;
       .experience_title {
         justify-content: center !important;
         .title::before {
@@ -153,7 +168,9 @@ MAIN
 // SKILLS SECTION
 // ================================================================
   .skills {
-    padding: 0 2.1875rem !important;
+    .skills_content {
+      margin: 0 2.1875rem !important;
+    }
   }
 /*
 ================================================================
@@ -161,9 +178,12 @@ FOOTER & CONTACT SECTION
 ================================================================
 */
   footer {
-    padding: 0 2.1875rem !important;
-    .contact_form {
-      display: none;
+    .contact_content {
+      margin: 0 2.1875rem;
+      .contact_form {
+        display: none;
+      }
     }
+  
   }
 }
